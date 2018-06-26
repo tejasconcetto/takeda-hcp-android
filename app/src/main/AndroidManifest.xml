@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.takeda.android">
+
+  <uses-permission android:name="android.permission.GET_TASKS"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+  <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+  <uses-feature
+    android:glEsVersion="0x00020000"
+    android:required="true"/>
+
+  <permission
+    android:name="com.takeda.android.MAPS_RECEIVE"
+    android:protectionLevel="signature"/>
+
+  <meta-data
+    android:name="com.google.firebase.messaging.default_notification_icon"
+    android:resource="@drawable/app_logo"/>
+  <!--
+         Set color used with incoming notification messages. This is used when no color is set for the incoming
+         notification message. See README(https://goo.gl/6BKBk7) for more.
+    -->
+  <meta-data
+    android:name="com.google.firebase.messaging.default_notification_color"
+    android:resource="@color/colorAccent"/>
+
+  <application
+    android:allowBackup="true"
+    android:hardwareAccelerated="false"
+    android:icon="@drawable/app_logo"
+    android:label="@string/app_name"
+    android:largeHeap="true"
+    android:name=".TakedaApplication"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    android:debuggable="false"
+    <activity
+      android:label="@string/app_name"
+      android:name=".activities.LoginActivity"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden"/>
+    <activity
+      android:label="@string/app_name"
+      android:launchMode="singleTask"
+      android:name=".activities.MainActivity"
+      android:screenOrientation="portrait">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="com.example.sampleapp.MESSAGE"/>
+
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </activity>
+    <activity
+      android:label="@string/app_name"
+      android:launchMode="singleInstance"
+      android:name=".activities.HomeActivity"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden"/>
+    <activity
+      android:label="@string/app_name"
+      android:name=".activities.MiscActivity"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden"/>
+    <activity
+      android:label="@string/app_name"
+      android:launchMode="singleInstance"
+      android:name=".activities.AboutUsActivity"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden"/>
+
+    <receiver android:name="com.skk.lib.SmsListenerModule.SmsListener">
+      <intent-filter>
+        <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+      </intent-filter>
+    </receiver>
+
+    <!-- Firebase Notifications -->
+    <!-- <service android:name="com.takeda.android.GCM.MyFirebaseMessagingService"> -->
+    <!-- <intent-filter> -->
+    <!-- <action android:name="com.google.firebase.MESSAGING_EVENT" /> -->
+    <!-- </intent-filter> -->
+    <!-- </service> -->
+    <!-- <service android:name="com.takeda.android.GCM.MyFirebaseInstanceIDService"> -->
+    <!-- <intent-filter> -->
+    <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT" /> -->
+    <!-- </intent-filter> -->
+    <!-- </service> -->
+
+
+    <!-- Firebase Notifications -->
+    <service android:name=".GCM.MyFirebaseMessagingService">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+      </intent-filter>
+    </service>
+    <service android:name=".GCM.MyFirebaseInstanceIDService">
+      <intent-filter>
+        <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+      </intent-filter>
+    </service>
+
+    <meta-data
+      android:name="com.google.android.gms.version"
+      android:value="@integer/google_play_services_version"/>
+    <meta-data
+      android:name="com.google.android.maps.v2.API_KEY"
+      android:value="AIzaSyBFBi99kfXl9PgMjcZGI3TTPzYLr0hcFfY"/>
+
+  </application>
+
+</manifest>
