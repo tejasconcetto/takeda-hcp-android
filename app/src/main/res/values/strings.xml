@@ -1,0 +1,264 @@
+<resources>
+  <string name="app_name">TakPro</string>
+  <string name="allow_permissions_msg">Please allow all the permissions of GoFresh in the Settings</string>
+  <string name="title_activity_misc">MiscActivity</string>
+  <string name="rs_symbol">₹</string>
+  <string name="paid_deliver_msg"> amount left for free delivery</string>
+  <string name="free_deliver_msg">You will get a free delivery now.</string>
+
+  <!-- Strings related to splash -->
+  <string name="tag_line">BULK SMS PROVIDER</string>
+  <string name="copyrightTV">&#169; Takeda</string>
+
+  <!-- Strings related to login -->
+  <string name="page_title">Login RemitONE</string>
+  <string name="prompt_email">Mobile Number</string>
+  <string name="prompt_password">Password</string>
+  <string name="action_sign_in">Login</string>
+  <string name="google_sign_up">GOOGLE</string>
+  <string name="fb_sign_up">FACEBOOK</string>
+  <string name="error_invalid_email">The email is invalid</string>
+  <string name="error_incorrect_password">The password is invalid</string>
+  <string name="forgot_pwd">Forgot Password?</string>
+  <string name="new_user">or Sign Up Using</string>
+  <string name="new_register">New User? Register Here</string>
+  <string name="default_phone_number">21339800</string>
+  <string name="connect_to_us"></string>
+
+  <!-- String related to signup-->
+  <string name="page_title_signup">Register</string>
+  <string name="prompt_name">Name</string>
+  <string name="prompt_signup_email">Email</string>
+  <string name="error_invalid_last_name">Please enter your last name.</string>
+  <string name="prompt_confirm_password">Confirm Password</string>
+  <string name="error_invalid_mobile">Please enter a valid mobile number.</string>
+  <string name="prompt_mobile_number">Mobile Number</string>
+  <string name="error_invalid_confirm_password">Passwords and Confirm Passwords do not match</string>
+  <string name="register_button">SIGN IN</string>
+
+  <!-- Terms and Conditions -->
+  <string name="terms_and_cond_content">
+        1. All the transactions responsibility will be hold by the user.\n\n
+        2. Money Remittance Charges will be applied. And user will bear the charges.\n\n
+        3. No fees for creating an account.\n\n
+        4. In case of any wrong transfer, we will not be held responsible for that if account number or any other details are wrong.\n\n
+    </string>
+
+  <!-- String related to Forgot Pwd-->
+  <string name="forgot_pwd_title">Forgot Password</string>
+  <string name="message">Enter your registered username to reset your password</string>
+  <string name="prompt_dob">Date of Birth (DD/MM/YYYY)</string>
+  <string name="submit_f_pwd">SUBMIT</string>
+  <string name="send_pwd">SEND PASSWORD</string>
+
+  <!-- String related to Nav Drawer-->
+  <string name="home">Home</string>
+  <string name="profile">Profile</string>
+  <string name="send_message">Send Message</string>
+  <string name="delivery_report">Delivery Report</string>
+  <string name="manage_users">View Users</string>
+  <string name="support">Support</string>
+  <string name="t_and_c_line_1">By signing up to RemitOne you are agree to our </string>
+  <string name="terms_of_service">Terms of Service</string>
+  <string name="t_and_c_line_2">and</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="logout">Logout</string>
+  <string name="success_title">Success</string>
+  <string name="need_help">Need help</string>
+
+  <string name="sender_id_reseller">Approve Sender Ids</string>
+  <string name="manage_jobs_reseller">Manage Jobs</string>
+
+  <!-- String related to Home Fragment-->
+  <string name="welcome">Welcome </string>
+
+  <!-- String related to empty fragment-->
+  <string name="no_txns">No transactions are done yet.</string>
+  <string name="unverified_user">Enter a valid username.</string>
+
+  <!-- String related to Pin Pwd Activity-->
+  <string name="prompt_pin">Pin</string>
+  <string name="submit_pin">SUBMIT</string>
+  <string name="wrong_user">Not </string>
+  <string name="use_pwd">Use Password instead </string>
+  <string name="title_pin">Enter Pin Password</string>
+  <string name="use_pin">Use Pin instead </string>
+
+
+  <!-- String related to Send Money Activity-->
+  <string name="send_money_title">Create Transaction</string>
+
+  <!-- String related to Beneficiary Fragment-->
+  <string name="add_beneficiary">Add Beneficiary</string>
+
+  <!-- String related to Beneficiary Details Screen-->
+  <string name="name_et_hint">Name</string>
+  <string name="beneficiary_email">Email</string>
+  <string name="address_et_hint">Address</string>
+  <string name="city_et_hint">City</string>
+  <string name="state_et_hint">State</string>
+  <string name="postcode_et_hint">Postal code</string>
+  <string name="error_invalid_address">Please enter valid address.</string>
+  <string name="error_invalid_name">Please enter your name.</string>
+  <string name="prompt_city">City</string>
+  <string name="error_invalid_city">Please enter a valid city name</string>
+  <string name="prompt_account_no">Account Number</string>
+  <string name="error_invalid_account">Please enter a valid account number</string>
+  <string name="prompt_bank_name">Bank Name</string>
+  <string name="error_bankname_error">Please enter a valid bank name</string>
+
+
+  <!-- Strings related to txnType -->
+  <string name="txn_type_title">Select Transaction Mode</string>
+  <string name="title_txn_type">Transaction Type</string>
+  <string name="cash_collection">Cash Collection</string>
+  <string name="account_txn">Account Transaction</string>
+  <string name="mobile_txn">Mobile Transaction</string>
+  <string name="other_type">Others</string>
+
+  <!-- Strings related to CashCollectiontxnType -->
+  <string name="cash_type_title">Select Collection Point</string>
+  <string name="state">State</string>
+  <string name="city">City</string>
+  <string name="coll_point">Collection Point</string>
+
+  <string-array name="state">
+    <item>State Name1</item>
+    <item>State Name2</item>
+    <item>State Name3</item>
+    <item>State Name4</item>
+  </string-array>
+
+  <string-array name="status">
+    <item>Completed</item>
+    <item>Pending</item>
+    <item>Rejected</item>
+    <item>all</item>
+  </string-array>
+
+  <string-array name="limit">
+    <item>5</item>
+    <item>10</item>
+    <item>15</item>
+    <item>20</item>
+    <item>25</item>
+    <item>30</item>
+    <item>35</item>
+    <item>40</item>
+    <item>all</item>
+
+  </string-array>
+
+
+  <!-- Strings related to AccountTxnType -->
+  <string name="account_type_title">Select Bank and Branch</string>
+  <string name="branchName">Branch</string>
+
+  <string-array name="bankNames">
+    <item>Bank1</item>
+    <item>Bank2</item>
+    <item>Bank3</item>
+    <item>Bank4</item>
+  </string-array>
+
+  <string-array name="branch">
+    <item>Branch1</item>
+    <item>Branch2</item>
+    <item>Branch3</item>
+    <item>Branch4</item>
+  </string-array>
+
+
+  <!-- Strings related to AccountTxnType -->
+  <string name="mobile_type_title">Select Mobile Network</string>
+
+  <string-array name="mobileNetwork">
+    <item>Company1</item>
+    <item>Company2</item>
+    <item>Company3</item>
+    <item>Company4</item>
+  </string-array>
+
+  <!-- Strings related to CashCollectiontxnType -->
+  <string name="two_fa_title">Two Factor Authentication</string>
+  <string name="prompt_code">Two factor Code</string>
+  <string name="button_resend">Resend Code</string>
+
+  <!-- Strings related to ForgotPwdFormScreenType -->
+  <string name="f_pwd_form_title">Forgot Password Form</string>
+  <string name="prompt_token">Token</string>
+  <string name="prompt_old_pwd">Existing Password</string>
+  <string name="prompt_new_pwd">New Password</string>
+  <string name="prompt_cfrm_pwd">Confirm Password</string>
+  <string name="incorrect_token">Invalid Token</string>
+  <string name="error_incorrect_c_pwd">Password and Confirm Passwords do not match.</string>
+
+  <!-- Strings related to ConfirmRegisterScreen -->
+  <string name="verify_code_title">Confirmation Code</string>
+  <string name="prompt_email_code">Email Confirmation Code</string>
+  <string name="prompt_sms_code">SMS Confirmation Code</string>
+  <string name="error_email_code">Enter a valid Email Code</string>
+  <string name="error_sms_code">Enter a valid SMS Code</string>
+  <string name="confirm_btn">CONFIRM</string>
+
+  <!-- Strings related to ConfirmRegisterAckWithPin -->
+  <string name="ack_title">Acknowledgement</string>
+  <string name="change_pin">Change Pin</string>
+  <string name="change_later">Later</string>
+  <string name="register_message">Congratulations ! You are successfully registered with RemitOne. Please use the below pin for future use.</string>
+
+  <!-- Strings related to Change Pin screen -->
+  <string name="existing_pin">Existing Pin</string>
+  <string name="pin_change_title">Change Pin</string>
+  <string name="new_pin">New Pin</string>
+  <string name="confirm_pin">Confirm Pin</string>
+  <string name="existing_pin_error">Existing Pin is invalid.</string>
+  <string name="existing_pwd_error">The old password is wrong.</string>
+  <string name="new_pin_error">Please enter a pin.</string>
+  <string name="confirm_pin_error">Pin and Confirm Pin do not match.</string>
+
+  <!--Profile-->
+  <string name="edit_btn">Edit</string>
+  <string name="change_pwd_btn">Change Password</string>
+  <string name="update_btn">Update</string>
+
+  <string-array name="countries">
+    <item>Country1</item>
+    <item>Country2</item>
+    <item>Country3</item>
+    <item>Country4</item>
+  </string-array>
+
+  <!--Txn Review Screen-->
+  <string name="ben_details">Beneficiary Details</string>
+  <string name="txn_details">Transaction Details</string>
+  <string name="txn_charges">Transaction Charges</string>
+
+  <!--Load Wallet Screen-->
+  <string name="load_wallet">Load Wallet</string>
+  <string name="txn_wallet">Transfer Between Wallets</string>
+  <string name="see_activity">See Activity</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="title_activity_sub_category">SubCategoryActivity</string>
+
+  <!-- TODO: Font String -->
+  <string name="font_regular">fonts/RobotoCondensed-Regular.ttf</string>
+  <string name="font_bold">fonts/helvetica_neue_bold.ttf</string>
+  <string name="font_bold_italic">fonts/RobotoCondensed-Regular.ttf</string>
+
+  <string name="enquiry_title">Enquiry</string>
+  <string name="calendar_title">Calendar</string>
+  <string name="settings_title">Settings</string>
+  <string name="product_title">Products</string>
+  <string name="offer_title">Special Offers</string>
+  <string name="past_records_title">Purchase Record</string>
+  <string name="update_profile_title">Update Profile</string>
+  <string name="change_pwd_title">Change Password</string>
+
+
+  <string name="pw_desc">Your password must contain: \n* 8 or more characters \n* Upper-case and lower-case letters \n* One or more numerical digits</string>
+
+
+</resources>

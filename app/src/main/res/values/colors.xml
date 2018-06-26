@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="primary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="accent">#1a2543</color>
+  <color name="oldthemeBlue">#091C47</color>
+  <color name="colorAccent">#2F467A</color>
+  <color name="counter_color">#c16936</color>
+  <color name="cartAmtLayout">#ffff9d</color>
+
+  <color name="colorFButton">#267AD1</color>
+  <color name="themeOrange">#FF7700</color>
+  <color name="themeBlue">#3b4664</color>
+  <color name="themeGreen">#28ED18</color>
+  <color name="themeWhite">#fffefc</color>
+  <color name="white">#FFFFFF</color>
+  <color name="black">#000000</color>
+  <color name="colorSwitchThumbNormal">#FF78909C</color>
+
+  <color name="message_green">#52B133</color>
+  <color name="message_red">#D65656</color>
+
+  <color name="off_white">#ebece5</color>
+  <color name="error_red">#ff0019</color>
+  <color name="emptyGray">#896f71</color>
+  <color name="address_selected">#ead6d8</color>
+
+  <color name="buttonColorPressed">#FF4C6BAF</color>
+  <color name="buttonColor">#091C47</color>
+
+  <color name="orangeButtonColorPressed">#FFF2A35E</color>
+  <color name="orangeButtonColor">#FF7700</color>
+  <color name="headerColor">#9B9B9B</color>
+  <color name="et_box">#FFFFFF</color>
+  <color name="darkerGray">#9c8191</color>
+
+  <color name="lightGray">#f4ebef</color>
+  <color name="red_offers">#ed4354</color>
+  <color name="red_color_pressed">#ef5d6b</color>
+  <color name="dateSelected">#EC2B8C</color>
+
+
+  <color name="favourite_event_bg">#35E85B</color>
+  <color name="past_record_selected">#2B3348</color>
+  <color name="past_record_unselected">#303A54</color>
+
+
+  <color name="switchTrack">#ffd600</color>
+  <color name="switchTrackDisable">#90caf9</color>
+  <color name="switchTrackActive">#1565c0</color>
+  <color name="switchTrackNormal">#90caf9</color>
+  <color name="switchThumbBgActive">#1b5e20</color>
+  <color name="switchThumbActive">#ad1457</color>
+  <color name="switchThumbkNormal">#64b5f6</color>
+  <color name="filter_text_not_selected">#767676</color>
+  <color name="filter_text_selected">#282828</color>
+
+</resources>

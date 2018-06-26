@@ -1,1 +1,0 @@
-# takeda-hcp-android
