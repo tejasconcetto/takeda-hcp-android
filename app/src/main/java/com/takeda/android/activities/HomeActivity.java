@@ -51,11 +51,22 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     mView = findViewById(R.id.coordinator_layout);
     init();
     showSlider();
+    hideorShowPurchaseHistory();
 
     if (session.isFirstTime()) {
       openDialog();
     }
 
+  }
+
+  private void hideorShowPurchaseHistory() {
+    if (session.isShowPurchaseHistory() == 1) {
+      findViewById(R.id.past_record_view).setVisibility(View.VISIBLE);
+      findViewById(R.id.past_record_layout).setVisibility(View.VISIBLE);
+    } else {
+      findViewById(R.id.past_record_view).setVisibility(View.GONE);
+      findViewById(R.id.past_record_layout).setVisibility(View.GONE);
+    }
   }
 
   void init() {

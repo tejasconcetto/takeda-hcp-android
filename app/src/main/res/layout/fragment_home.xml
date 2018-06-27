@@ -1,0 +1,664 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/coordinator_layout"
+  style="@style/MyCoordinatorLayout">
+
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+      android:id="@+id/header_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/themeBlue"
+      android:layout_weight="0.8"
+      android:orientation="vertical">
+
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5">
+
+        <TextView
+          style="@style/MyTextViewCOrderBold"
+          android:layout_width="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="@dimen/margin_15"
+          android:text="WELCOME"
+          android:textColor="@color/red_offers"
+          android:textSize="18sp"/>
+
+        <ImageView
+          android:id="@+id/settings_btn"
+          android:layout_width="30dp"
+          android:layout_height="30dp"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="@dimen/margin_20"
+          android:scaleType="center"
+          android:src="@drawable/setting"/>
+      </RelativeLayout>
+
+      <TextView
+        android:id="@+id/user_name"
+        style="@style/MyTextViewCOrder"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:textColor="@color/white"
+        android:textSize="24sp"/>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:layout_marginRight="@dimen/margin_15">
+
+        <TextView
+          android:id="@+id/user_id"
+          style="@style/MyTextViewCOrder"
+          android:layout_gravity="left"
+          android:gravity="left"
+          android:maxLines="1"
+          android:singleLine="true"
+          android:textColor="@color/white"
+          android:textSize="14sp"/>
+
+        <TextView
+          android:id="@+id/sales_name"
+          style="@style/MyTextViewCOrder"
+          android:layout_gravity="center"
+          android:layout_marginLeft="@dimen/margin_10"
+          android:gravity="center"
+          android:maxLines="1"
+          android:singleLine="true"
+          android:textColor="@color/white"
+          android:textSize="14sp"
+          android:visibility="gone"/>
+
+        <TextView
+          android:id="@+id/contact_no"
+          style="@style/MyTextViewCOrder"
+          android:layout_width="match_parent"
+          android:layout_gravity="right"
+          android:layout_marginLeft="@dimen/margin_10"
+          android:gravity="right"
+          android:maxLines="1"
+          android:singleLine="true"
+          android:textColor="@color/white"
+          android:textSize="14sp"
+          android:visibility="gone"/>
+      </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+      android:scrollbars="none"
+      android:id="@+id/login_form"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@+id/header_layout"
+      android:layout_above="@+id/bottom_layout">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <include
+          layout="@layout/slider_layout"
+          />
+
+
+        <LinearLayout
+          android:id="@+id/cartDataLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="@dimen/margin_10"
+          android:orientation="vertical"
+          >
+
+          <RelativeLayout
+            android:id="@+id/product_layout"
+            style="@style/MainMenuIconLayout">
+
+            <ImageView
+              android:id="@+id/prdctImage"
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentLeft="true"
+              android:src="@drawable/product_icon"/>
+
+            <TextView
+              style="@style/MainMenuTextViewthemeIcon"
+              android:layout_width="wrap_content"
+              android:layout_toRightOf="@+id/prdctImage"
+              android:text="Product"/>
+
+            <ImageView
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentRight="true"
+              android:src="@drawable/list_arrow"/>
+
+          </RelativeLayout>
+
+          <View
+            android:id="@+id/past_record_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/emptyGray"/>
+
+          <RelativeLayout
+            android:id="@+id/past_record_layout"
+            style="@style/MainMenuIconLayout">
+
+            <ImageView
+              android:id="@+id/pastRecord"
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentLeft="true"
+              android:src="@drawable/past_record"/>
+
+            <TextView
+              style="@style/MainMenuTextViewthemeIcon"
+              android:layout_width="wrap_content"
+              android:layout_toRightOf="@+id/pastRecord"
+              android:text="Purchase Record"/>
+
+            <ImageView
+              android:id="@+id/homeImage"
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentRight="true"
+              android:src="@drawable/list_arrow"/>
+
+          </RelativeLayout>
+
+          <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/emptyGray"/>
+
+          <RelativeLayout
+            android:id="@+id/calendar_layout"
+            style="@style/MainMenuIconLayout">
+
+            <ImageView
+              android:id="@+id/calendarImage"
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentLeft="true"
+              android:src="@drawable/calendar_icon"/>
+
+            <TextView
+              style="@style/MainMenuTextViewthemeIcon"
+              android:layout_width="wrap_content"
+              android:layout_toRightOf="@+id/calendarImage"
+              android:text="Calendar"/>
+
+            <ImageView
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentRight="true"
+              android:src="@drawable/list_arrow"/>
+
+          </RelativeLayout>
+
+          <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/emptyGray"/>
+
+          <RelativeLayout
+            android:id="@+id/enquiry_layout"
+            style="@style/MainMenuIconLayout">
+
+            <ImageView
+              android:id="@+id/enquiryImage"
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentLeft="true"
+              android:src="@drawable/enquiry_icon"/>
+
+            <TextView
+              style="@style/MainMenuTextViewthemeIcon"
+              android:layout_width="wrap_content"
+              android:layout_toRightOf="@+id/enquiryImage"
+              android:text="Enquiry"/>
+
+            <ImageView
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentRight="true"
+              android:src="@drawable/list_arrow"/>
+          </RelativeLayout>
+
+          <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/emptyGray"/>
+
+          <RelativeLayout
+            android:id="@+id/online_order_layout"
+            style="@style/MainMenuIconLayout"
+            android:visibility="gone">
+
+            <ImageView
+              android:id="@+id/onlineOrderImg"
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentLeft="true"
+              android:src="@drawable/order_icon"/>
+
+            <TextView
+              style="@style/MainMenuTextViewthemeIcon"
+              android:layout_width="wrap_content"
+              android:layout_toRightOf="@+id/onlineOrderImg"
+              android:text="Online Order"/>
+
+            <ImageView
+              style="@style/ImageViewMainMenutheme"
+              android:layout_alignParentRight="true"
+              android:src="@drawable/list_arrow"/>
+          </RelativeLayout>
+
+          <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/emptyGray"
+            android:visibility="gone"/>
+
+        </LinearLayout>
+      </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+      android:id="@+id/bottom_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:weightSum="2"
+      android:layout_alignParentBottom="true">
+
+      <LinearLayout
+        android:id="@+id/special_offers_layout"
+        style="@style/MainMenuIconLayout"
+        android:layout_gravity="center"
+        android:background="@color/red_offers"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <ImageView
+          style="@style/ImageViewMainMenutheme"
+          android:layout_alignParentLeft="true"
+          android:src="@drawable/offers_icon"/>
+
+        <TextView
+
+          style="@style/MainMenuTextViewthemeIcon"
+          android:layout_width="wrap_content"
+          android:layout_toRightOf="@+id/onlineOrderImg"
+          android:text="SPECIAL EVENTS/SPECIAL OFFERS"
+          android:textColor="@color/white"
+          android:textStyle="bold"/>
+
+      </LinearLayout>
+
+
+      <LinearLayout
+        android:id="@+id/about_us_layout"
+        style="@style/MainMenuIconLayout"
+        android:layout_gravity="center"
+        android:background="@color/themeBlue"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <ImageView
+          style="@style/ImageViewMainMenutheme"
+          android:layout_alignParentLeft="true"
+          android:src="@drawable/about_us_icon"/>
+
+        <TextView
+          style="@style/MainMenuTextViewthemeIcon"
+          android:layout_width="wrap_content"
+          android:layout_toRightOf="@+id/onlineOrderImg"
+          android:text="ABOUT US"
+          android:textColor="@color/white"/>
+
+      </LinearLayout>
+    </LinearLayout>
+  </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
+  <!--
+  <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/coordinator_layout"
+      style="@style/MyCoordinatorLayout">
+
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:app="http://schemas.android.com/apk/res-auto"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:weightSum="2">
+
+          <LinearLayout
+
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="1.72"
+
+              android:background="@color/off_white"
+              android:orientation="vertical">
+
+
+              <LinearLayout
+
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@color/off_white"
+
+                  android:orientation="vertical">
+
+                  <LinearLayout
+                      android:id="@+id/header_layout"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:background="@color/themeBlue"
+                      android:orientation="vertical">
+
+                      <RelativeLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/margin_5">
+
+                          <TextView
+                              style="@style/MyTextViewCOrderBold"
+                              android:layout_width="wrap_content"
+                              android:layout_alignParentLeft="true"
+                              android:layout_centerVertical="true"
+                              android:layout_marginLeft="@dimen/margin_15"
+                              android:text="WELCOME"
+                              android:textColor="@color/red_offers"
+                              android:textSize="18sp" />
+
+                          <ImageView
+                              android:id="@+id/settings_btn"
+                              android:layout_width="30dp"
+                              android:layout_height="30dp"
+                              android:layout_alignParentRight="true"
+                              android:layout_marginRight="@dimen/margin_20"
+                              android:scaleType="center"
+                              android:src="@drawable/setting" />
+                      </RelativeLayout>
+
+                      <TextView
+                          android:id="@+id/user_name"
+                          style="@style/MyTextViewCOrder"
+                          android:layout_width="wrap_content"
+                          android:layout_alignParentLeft="true"
+                          android:layout_centerVertical="true"
+                          android:layout_marginLeft="@dimen/margin_15"
+                          android:textColor="@color/white"
+                          android:textSize="24sp" />
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginBottom="@dimen/margin_5"
+                          android:layout_marginLeft="@dimen/margin_15"
+                          android:layout_marginRight="@dimen/margin_15">
+
+                          <TextView
+                              android:id="@+id/user_id"
+                              style="@style/MyTextViewCOrder"
+                              android:layout_gravity="left"
+                              android:gravity="left"
+                              android:maxLines="1"
+                              android:singleLine="true"
+                              android:textColor="@color/white"
+                              android:textSize="14sp" />
+
+                          <TextView
+                              android:id="@+id/sales_name"
+                              style="@style/MyTextViewCOrder"
+                              android:layout_gravity="center"
+                              android:layout_marginLeft="@dimen/margin_10"
+                              android:gravity="center"
+                              android:maxLines="1"
+                              android:singleLine="true"
+                              android:textColor="@color/white"
+                              android:textSize="14sp"
+                              android:visibility="gone" />
+
+                          <TextView
+                              android:id="@+id/contact_no"
+                              style="@style/MyTextViewCOrder"
+                              android:layout_width="match_parent"
+                              android:layout_gravity="right"
+                              android:layout_marginLeft="@dimen/margin_10"
+                              android:gravity="right"
+                              android:maxLines="1"
+                              android:singleLine="true"
+                              android:textColor="@color/white"
+                              android:textSize="14sp"
+                              android:visibility="gone" />
+                      </LinearLayout>
+
+                  </LinearLayout>
+
+                  <include
+                      layout="@layout/slider_layout"
+                      android:layout_width="match_parent"
+                      android:layout_height="160dp" />
+
+                  <LinearLayout
+                      android:id="@+id/cartDataLayout"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/margin_10"
+                      android:orientation="vertical">
+
+                      <RelativeLayout
+                          android:id="@+id/product_layout"
+                          style="@style/MainMenuIconLayout">
+
+                          <ImageView
+                              android:id="@+id/prdctImage"
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentLeft="true"
+                              android:src="@drawable/product_icon" />
+
+                          <TextView
+                              style="@style/MainMenuTextViewthemeIcon"
+                              android:layout_width="wrap_content"
+                              android:layout_toRightOf="@+id/prdctImage"
+                              android:text="Product" />
+
+                          <ImageView
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentRight="true"
+                              android:src="@drawable/list_arrow" />
+
+                      </RelativeLayout>
+
+                      <View
+                          android:layout_width="match_parent"
+                          android:layout_height="0.5dp"
+                          android:background="@color/emptyGray" />
+
+                      <RelativeLayout
+                          android:id="@+id/past_record_layout"
+                          style="@style/MainMenuIconLayout">
+
+                          <ImageView
+                              android:id="@+id/pastRecord"
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentLeft="true"
+                              android:src="@drawable/past_record" />
+
+                          <TextView
+                              style="@style/MainMenuTextViewthemeIcon"
+                              android:layout_width="wrap_content"
+                              android:layout_toRightOf="@+id/pastRecord"
+                              android:text="Purchase Record" />
+
+                          <ImageView
+                              android:id="@+id/homeImage"
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentRight="true"
+                              android:src="@drawable/list_arrow" />
+
+                      </RelativeLayout>
+
+                      <View
+                          android:layout_width="match_parent"
+                          android:layout_height="0.5dp"
+                          android:background="@color/emptyGray" />
+
+                      <RelativeLayout
+                          android:id="@+id/calendar_layout"
+                          style="@style/MainMenuIconLayout">
+
+                          <ImageView
+                              android:id="@+id/calendarImage"
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentLeft="true"
+                              android:src="@drawable/calendar_icon" />
+
+                          <TextView
+                              style="@style/MainMenuTextViewthemeIcon"
+                              android:layout_width="wrap_content"
+                              android:layout_toRightOf="@+id/calendarImage"
+                              android:text="Calendar" />
+
+                          <ImageView
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentRight="true"
+                              android:src="@drawable/list_arrow" />
+
+                      </RelativeLayout>
+
+                      <View
+                          android:layout_width="match_parent"
+                          android:layout_height="0.5dp"
+                          android:background="@color/emptyGray" />
+
+                      <RelativeLayout
+                          android:id="@+id/enquiry_layout"
+                          style="@style/MainMenuIconLayout">
+
+                          <ImageView
+                              android:id="@+id/enquiryImage"
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentLeft="true"
+                              android:src="@drawable/enquiry_icon" />
+
+                          <TextView
+                              style="@style/MainMenuTextViewthemeIcon"
+                              android:layout_width="wrap_content"
+                              android:layout_toRightOf="@+id/enquiryImage"
+                              android:text="Enquiry" />
+
+                          <ImageView
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentRight="true"
+                              android:src="@drawable/list_arrow" />
+                      </RelativeLayout>
+
+                      <View
+                          android:layout_width="match_parent"
+                          android:layout_height="0.5dp"
+                          android:background="@color/emptyGray" />
+
+                      <RelativeLayout
+                          android:id="@+id/online_order_layout"
+                          style="@style/MainMenuIconLayout"
+                          android:visibility="gone">
+
+                          <ImageView
+                              android:id="@+id/onlineOrderImg"
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentLeft="true"
+                              android:src="@drawable/order_icon" />
+
+                          <TextView
+                              style="@style/MainMenuTextViewthemeIcon"
+                              android:layout_width="wrap_content"
+                              android:layout_toRightOf="@+id/onlineOrderImg"
+                              android:text="Online Order" />
+
+                          <ImageView
+                              style="@style/ImageViewMainMenutheme"
+                              android:layout_alignParentRight="true"
+                              android:src="@drawable/list_arrow" />
+                      </RelativeLayout>
+
+                      <View
+                          android:layout_width="match_parent"
+                          android:layout_height="0.5dp"
+                          android:background="@color/emptyGray"
+                          android:visibility="gone" />
+
+                  </LinearLayout>
+              </LinearLayout>
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.3"
+              android:orientation="vertical">
+
+              <LinearLayout
+                  android:id="@+id/special_offers_layout"
+                  style="@style/MainMenuIconLayout"
+                  android:layout_gravity="center"
+                  android:background="@color/red_offers"
+                  android:gravity="center"
+                  android:orientation="horizontal">
+
+                  <ImageView
+                      style="@style/ImageViewMainMenutheme"
+                      android:layout_alignParentLeft="true"
+                      android:src="@drawable/offers_icon" />
+
+                  <TextView
+
+                      style="@style/MainMenuTextViewthemeIcon"
+                      android:layout_width="wrap_content"
+                      android:layout_toRightOf="@+id/onlineOrderImg"
+                      android:text="SPECIAL EVENTS/SPECIAL OFFERS"
+                      android:textColor="@color/white"
+                      android:textStyle="bold" />
+
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:id="@+id/about_us_layout"
+                  style="@style/MainMenuIconLayout"
+                  android:layout_gravity="center"
+                  android:background="@color/themeBlue"
+                  android:gravity="center"
+                  android:orientation="horizontal">
+
+                  <ImageView
+                      style="@style/ImageViewMainMenutheme"
+                      android:layout_alignParentLeft="true"
+                      android:src="@drawable/about_us_icon" />
+
+                  <TextView
+                      style="@style/MainMenuTextViewthemeIcon"
+                      android:layout_width="wrap_content"
+                      android:layout_toRightOf="@+id/onlineOrderImg"
+                      android:text="ABOUT US"
+                      android:textColor="@color/white" />
+
+              </LinearLayout>
+          </LinearLayout>
+      </LinearLayout>
+
+  </android.support.design.widget.CoordinatorLayout>-->
+
+

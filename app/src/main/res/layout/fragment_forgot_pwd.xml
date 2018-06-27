@@ -1,0 +1,122 @@
+<android.support.design.widget.CoordinatorLayout
+  android:id="@+id/coordinator_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/MyCoordinatorLayout">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:orientation="vertical">
+
+
+    <!-- Login progress -->
+    <ProgressBar
+      android:id="@+id/login_progress"
+      style="?android:attr/progressBarStyleLarge"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:visibility="gone"/>
+
+    <ScrollView
+      android:scrollbars="none"
+      android:id="@+id/login_form"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_marginBottom="12dp">
+
+
+      <LinearLayout
+        android:padding="@dimen/paddingMargin"
+        android:layout_gravity="center"
+        android:id="@+id/email_login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+          android:layout_marginBottom="@dimen/margin_20"
+          android:layout_gravity="center"
+          android:id="@+id/logo"
+          android:layout_width="@dimen/logo_dimen"
+          android:layout_height="@dimen/logo_dimen"
+          android:src="@drawable/dp_image"/>
+
+
+        <TextView
+          style="@style/MyTextViewtheme"
+          android:id="@+id/tv_forgotPassword"
+          android:text="@string/forgot_pwd"/>
+
+        <TextView
+          android:textSize="16sp"
+          android:padding="@dimen/margin_5"
+          style="@style/MyTextViewtheme"
+          android:id="@+id/registerTv"
+          android:text="@string/message"
+          android:textColor="@color/emptyGray"
+          android:textStyle="normal"/>
+
+
+        <!--Email-->
+
+        <EditText
+          android:maxLength="10"
+          android:layout_marginTop="@dimen/margin_30"
+          style="@style/MyETtheme"
+          android:id="@+id/user_name"
+          android:hint="User Name"
+          android:inputType="text"/>
+
+        <TextView
+          android:visibility="gone"
+          android:id="@+id/username_error_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/unverified_user"
+          android:textColor="@color/error_red"
+          android:textSize="16sp"/>
+
+        <!--&lt;!&ndash;DOB&ndash;&gt;-->
+
+        <!--<TextView-->
+        <!--android:layout_margin="@dimen/margin_20"-->
+        <!--style="@style/MyTextViewtheme"-->
+        <!--android:text="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; OR &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;"/>-->
+
+        <!--<EditText-->
+        <!--android:focusable="false"-->
+        <!--style="@style/MyETtheme"-->
+        <!--android:id="@+id/dob"-->
+        <!--android:singleLine="true"-->
+        <!--android:hint="Email Id"-->
+        <!--android:inputType="textEmailAddress" />-->
+
+        <TextView
+          android:visibility="gone"
+          android:id="@+id/dob_error_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/error_incorrect_password"
+          android:textColor="@color/error_red"
+          android:textSize="16sp"/>
+
+
+        <Button
+          android:layout_marginRight="@dimen/margin_40"
+          android:layout_marginLeft="@dimen/margin_40"
+          style="@style/MyButtonthemeBlue"
+          android:id="@+id/submit_button"
+          android:layout_marginBottom="@dimen/margin_20"
+          android:layout_marginTop="@dimen/margin_30"
+          android:text="SUBMIT"/>
+
+      </LinearLayout>
+
+    </ScrollView>
+  </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

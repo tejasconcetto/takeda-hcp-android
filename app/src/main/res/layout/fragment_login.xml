@@ -1,0 +1,131 @@
+<android.support.design.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/coordinator_layout"
+  style="@style/MyCoordinatorLayout">
+
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:paddingLeft="@dimen/paddingRight"
+    android:paddingRight="@dimen/paddingLeft"
+    android:orientation="vertical"
+    android:gravity="top">
+
+    <include
+      android:id="@+id/logo_layout"
+      layout="@layout/logo_layout"
+      android:layout_height="200dp"
+      android:layout_width="match_parent"/>
+
+    <LinearLayout
+      android:layout_marginRight="@dimen/margin_30"
+      android:layout_marginLeft="@dimen/margin_30"
+      android:layout_alignParentBottom="true"
+      android:id="@+id/login_form_view"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <!-- Username-->
+      <EditText
+        android:layout_marginTop="@dimen/margin_15"
+        style="@style/MyETtheme"
+        android:id="@+id/mobile_number_et"
+        android:hint="Username"
+        android:inputType="text"/>
+
+      <TextView
+        android:visibility="gone"
+        android:id="@+id/email_error_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unverified_user"
+        android:textColor="@color/error_red"
+        android:textSize="16sp"/>
+
+
+      <!-- Password-->
+
+      <RelativeLayout
+        android:layout_marginTop="@dimen/margin_10"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+
+          style="@style/MyETtheme"
+          android:id="@+id/password"
+          android:hint="@string/prompt_password"
+          android:imeOptions="actionGo"
+          android:inputType="textPassword"/>
+
+        <TextView
+          android:layout_below="@+id/password"
+          android:visibility="gone"
+          android:id="@+id/pwd_error_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/error_incorrect_password"
+          android:textColor="@color/error_red"
+          android:textSize="16sp"/>
+
+        <TextView
+          android:layout_marginRight="@dimen/margin_20"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true"
+          android:id="@+id/tv_forgotPassword"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/forgot_pwd"
+          android:textColor="@color/error_red"
+          android:textSize="13sp"/>
+      </RelativeLayout>
+
+      <CheckBox
+        android:id="@+id/remember_me_chck_box"
+        android:layout_marginTop="@dimen/margin_10"
+        android:text="Remember Me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        />
+
+      <Button
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_height="40dp"
+        style="@style/MyButtonthemeBlue"
+        android:id="@+id/email_sign_in_button"
+        android:text="@string/action_sign_in"/>
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_gravity="right"
+        android:orientation="horizontal">
+
+        <ImageView
+          android:layout_width="18dp"
+          android:layout_height="18dp"
+          android:src="@drawable/enquiry_icon"
+          android:layout_marginRight="5dp"
+          android:layout_gravity="center_vertical"/>
+
+        <Button
+          android:id="@+id/tv_need_help"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/need_help"
+          android:textAllCaps="false"
+          android:textColor="@color/colorAccent"
+          android:textSize="15sp"
+          android:background="@android:color/transparent"
+          />
+
+      </LinearLayout>
+
+    </LinearLayout>
+  </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

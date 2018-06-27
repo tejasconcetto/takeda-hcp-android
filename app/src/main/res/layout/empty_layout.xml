@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  android:background="@drawable/login_background"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:padding="@dimen/margin_10"
+  android:layout_centerInParent="true"
+  android:layout_gravity="center"
+  android:layout_height="wrap_content">
+
+  <LinearLayout
+    android:layout_centerInParent="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+      android:layout_gravity="center"
+      android:id="@+id/empty_data_image"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:scaleType="fitXY"
+      android:src="@drawable/logo"/>
+
+    <TextView
+      android:id="@+id/empty_data_text"
+      android:textSize="20sp"
+      android:layout_marginTop="@dimen/margin_30"
+      android:textColor="@color/darkerGray"
+      style="@style/MyTextViewtheme"
+      android:text="John Doe"/>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_marginTop="@dimen/margin_30"
+      android:layout_marginRight="@dimen/margin_50"
+      android:layout_marginLeft="@dimen/margin_50"
+      android:padding="8dp"
+      android:visibility="gone"
+      android:id="@+id/empty_button"
+      style="@style/MyButtonthemeBlue"
+      android:text="Add more to Cart"/>
+
+  </LinearLayout>
+</RelativeLayout>

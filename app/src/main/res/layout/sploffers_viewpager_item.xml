@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:fresco="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/ll_view_pager_item"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:layout_above="@+id/accept_offer_button"
+    android:layout_alignParentTop="true"
+    android:background="@color/white"
+    android:id="@+id/flag"
+    fresco:actualImageScaleType="fitCenter"
+    android:adjustViewBounds="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"/>
+
+  <LinearLayout
+    android:visibility="gone"
+    android:layout_marginTop="@dimen/margin_15"
+    android:paddingRight="@dimen/margin_15"
+    android:paddingLeft="@dimen/margin_15"
+    android:id="@+id/user_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+      android:textSize="20sp"
+      style="@style/MyTextViewAddress"
+      android:id="@+id/banner_name"
+      android:text="Akshay Bissa"
+      android:textStyle="bold"/>
+
+    <TextView
+      android:layout_marginTop="@dimen/margin_10"
+      android:textSize="16sp"
+      android:layout_gravity="center_vertical"
+      style="@style/MyTextViewAddress"
+      android:id="@+id/tv_description"
+      android:text="Description : "/>
+
+    <TextView
+      android:layout_marginTop="@dimen/margin_5"
+      android:textSize="16sp"
+      android:layout_gravity="center_vertical"
+      style="@style/MyTextViewAddress"
+      android:id="@+id/tv_effective_date"
+      android:text="Effective from : "/>
+
+    <TextView
+      android:layout_marginTop="@dimen/margin_5"
+      android:textSize="16sp"
+      android:layout_gravity="center_vertical"
+      style="@style/MyTextViewAddress"
+      android:id="@+id/tv_expiry_date"
+      android:text="Expires On : "/>
+
+  </LinearLayout>
+
+  <Button
+    android:layout_marginBottom="@dimen/margin_10"
+    android:layout_marginTop="@dimen/margin_15"
+    android:layout_marginRight="@dimen/margin_30"
+    android:layout_marginLeft="@dimen/margin_30"
+    android:layout_alignParentBottom="true"
+    android:padding="@dimen/margin_10"
+    android:layout_above="@+id/enquiry_button"
+    style="@style/MyButtonthemeRed"
+    android:id="@+id/accept_offer_button"
+    android:text="Request for more Information"/>
+
+
+</RelativeLayout>

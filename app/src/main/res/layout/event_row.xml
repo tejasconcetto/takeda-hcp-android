@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="MissingPrefix"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:id="@+id/relative_layout_user"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:id="@+id/not_selected_layout"
+    android:padding="@dimen/margin_15"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+      android:layout_marginLeft="@dimen/margin_10"
+      android:layout_marginRight="@dimen/margin_10"
+      android:elevation="10dp"
+      android:gravity="center"
+      android:padding="2dp"
+      android:textStyle="bold"
+      android:textColor="@color/white"
+      android:background="@drawable/circle_counter_blue"
+      android:text="99"
+      android:textSize="22sp"
+      android:id="@+id/event_date"
+      android:layout_width="55dp"
+      android:layout_height="55dp"/>
+
+    <TextView
+      android:singleLine="false"
+      android:maxLines="3"
+      android:textStyle="bold"
+      android:layout_toLeftOf="@+id/favourite_icon_not_selected"
+      android:layout_toRightOf="@+id/event_date"
+      android:textColor="@color/emptyGray"
+      android:textSize="17sp"
+      android:id="@+id/event_title_not_selected"
+      style="@style/MyTextViewCOrder"
+      android:text="Event Title"/>
+
+    <!--<TextView-->
+    <!--android:id="@+id/event_title_not_selected"-->
+    <!--android:textSize="19sp"-->
+    <!--android:singleLine="false"-->
+    <!--style="@style/MyTextViewCOrder"-->
+    <!--android:textColor="@color/emptyGray"-->
+    <!--android:text="Event Title"-->
+    <!--android:layout_toLeftOf="@+id/favourite_icon_not_selected"-->
+    <!--android:layout_alignBottom="@+id/favourite_icon_not_selected"-->
+    <!--android:layout_toRightOf="@+id/event_date"-->
+    <!--android:layout_toEndOf="@+id/event_date" />-->
+
+
+    <ImageView
+      android:layout_marginLeft="@dimen/margin_15"
+      android:id="@+id/favourite_icon_not_selected"
+      android:src="@drawable/favourite_icon_not"
+      android:layout_alignParentRight="true"
+      android:layout_width="30dp"
+      android:layout_height="30dp"/>
+
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_marginTop="@dimen/margin_15"
+      android:layout_below="@+id/event_date"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:id="@+id/event_organiser_name"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/emptyGray"
+        android:text="Event Oraganiser : "/>
+
+      <TextView
+        android:layout_marginTop="@dimen/margin_5"
+        android:id="@+id/event_period"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/emptyGray"
+        android:text="Event Period : "/>
+
+      <TextView
+        android:layout_marginTop="@dimen/margin_5"
+        android:id="@+id/event_description"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/emptyGray"
+        android:text="Event Description : "/>
+
+      <TextView
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/margin_5"
+        android:id="@+id/more_register_text"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/emptyGray"/>
+
+    </LinearLayout>
+
+  </RelativeLayout>
+
+
+  <RelativeLayout
+    android:id="@+id/selected_layout"
+    android:background="@color/themeBlue"
+    android:padding="@dimen/margin_15"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+      android:layout_marginLeft="@dimen/margin_10"
+      android:layout_marginRight="@dimen/margin_10"
+      android:elevation="10dp"
+      android:gravity="center"
+      android:padding="2dp"
+      android:textStyle="bold"
+      fontPath="@string/font_bold"
+      android:textColor="@color/white"
+      android:background="@drawable/circle_counter"
+      android:text="99"
+      android:textSize="22sp"
+      android:id="@+id/event_selected_date"
+      android:layout_width="55dp"
+      android:layout_height="55dp"/>
+
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_marginTop="@dimen/margin_15"
+      android:layout_below="@+id/event_selected_date"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:id="@+id/event_selected_organiser_name"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:text="Event Oraganiser : "/>
+
+      <TextView
+        android:layout_marginTop="@dimen/margin_5"
+        android:id="@+id/event_selected_period"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:text="Event Period : "/>
+
+      <TextView
+        android:layout_marginTop="@dimen/margin_5"
+        android:id="@+id/event_selected_description"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:text="Event Description : "/>
+
+      <TextView
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/margin_5"
+        android:id="@+id/more_register_selected_text"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <TextView
+      android:singleLine="false"
+      android:maxLines="3"
+      android:textStyle="bold"
+      android:layout_toRightOf="@+id/event_selected_date"
+      android:layout_toLeftOf="@+id/favourite_icon_selected"
+      android:id="@+id/event_title_selected"
+      android:textSize="17sp"
+      style="@style/MyTextViewCOrder"
+      android:textColor="@color/white"
+      android:text="Event Title"/>
+
+    <ImageView
+      android:layout_marginLeft="@dimen/margin_15"
+      android:id="@+id/favourite_icon_selected"
+      android:src="@drawable/favourite_icon_not_white"
+      android:layout_alignParentRight="true"
+      android:layout_width="30dp"
+      android:layout_height="30dp"/>
+
+  </RelativeLayout>
+
+
+</LinearLayout>

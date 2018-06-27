@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:padding="@dimen/margin_10"
+    android:id="@+id/titleLayout"
+    android:gravity="center_vertical"
+    android:background="@drawable/otp_popup_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+      style="@style/MyTextViewtheme"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/textView"
+      android:text="Order Product"
+      android:textColor="@color/white"
+      android:textSize="22sp"
+      android:textStyle="bold"/>
+
+    <ImageView
+      android:layout_centerVertical="true"
+      android:id="@+id/crossBtn"
+      android:layout_marginRight="@dimen/margin_15"
+      android:src="@drawable/cross_white_icon"
+      android:layout_alignParentRight="true"
+      android:layout_width="18dp"
+      android:layout_height="18dp"/>
+  </RelativeLayout>
+
+  <LinearLayout
+    android:padding="@dimen/margin_15"
+    android:background="@drawable/otp_popup_footer"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+      layout="@layout/spinner_layout"/>
+
+    <EditText
+      android:layout_marginTop="@dimen/margin_20"
+      style="@style/MyETtheme"
+      android:background="@drawable/txt_box_otp"
+      android:id="@+id/product_quantity"
+      android:maxLength="6"
+      android:hint="Enter Quantity"
+      android:inputType="number"/>
+
+    <Button
+      style="@style/MyButtonthemeRed"
+      android:layout_marginTop="@dimen/margin_20"
+      android:layout_marginRight="@dimen/margin_5"
+      android:layout_marginLeft="@dimen/margin_5"
+      android:id="@+id/order_product"
+      android:text="ORDER NOW"/>
+  </LinearLayout>
+
+</LinearLayout>

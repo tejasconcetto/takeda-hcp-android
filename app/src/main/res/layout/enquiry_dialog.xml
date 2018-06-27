@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:padding="@dimen/margin_15"
+  android:orientation="vertical"
+  android:layout_gravity="center"
+  android:layout_margin="@dimen/margin_20"
+  android:background="@drawable/dialog_bg">
+
+  <TextView
+    android:gravity="left"
+    android:layout_gravity="left"
+    android:id="@+id/dialog_title"
+    android:textSize="18sp"
+    android:textColor="@color/black"
+    android:text="Call Us Now"
+    style="@style/MyTextViewCOrderBold"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+  <LinearLayout
+    android:layout_marginTop="5dp"
+    android:id="@+id/email_details_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+      android:id="@+id/dialogIcon"
+      android:layout_height="18dp"
+      android:layout_width="@dimen/margin_20"
+      android:layout_gravity="center_vertical"
+      android:layout_marginRight="@dimen/margin_10"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:src="@drawable/icn_mobile"/>
+
+    <TextView
+      android:textColor="@color/black"
+      android:textSize="15sp"
+      android:layout_gravity="center_vertical"
+      style="@style/MyTextViewAddress"
+      android:id="@+id/contactDetail"
+      android:text="email@gmail.com"/>
+
+  </LinearLayout>
+
+  <TextView
+    android:gravity="left"
+    android:layout_gravity="left"
+    android:layout_marginTop="5dp"
+    android:textColor="@color/black"
+    android:text="Call Us Now"
+    style="@style/MyTextViewtheme"
+    android:id="@+id/contactMsg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+  <LinearLayout
+    android:layout_marginTop="@dimen/margin_15"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+      android:layout_weight="1"
+      android:layout_marginRight="@dimen/margin_10"
+      android:id="@+id/posBtn"
+      style="@style/MyButtonthemeRed"
+      android:layout_width="match_parent"
+      android:layout_height="35dp"/>
+
+    <Button
+      android:layout_weight="1"
+      style="@style/MyButtonthemeBlue"
+      android:layout_width="match_parent"
+      android:layout_marginLeft="@dimen/margin_10"
+      android:id="@+id/negBtn"
+      android:background="@drawable/txt_box_otp"
+      android:text="CANCEL"
+      android:textColor="@color/darkerGray"
+      android:layout_height="35dp"/>
+
+  </LinearLayout>
+
+</LinearLayout>

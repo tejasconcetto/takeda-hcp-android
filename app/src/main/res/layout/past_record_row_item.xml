@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:id="@+id/relative_layout_user"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:id="@+id/row_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:weightSum="5">
+
+    <TextView
+      style="@style/TVPastRecord"
+      android:id="@+id/tv_date_record"
+      android:layout_width="0dp"
+      android:layout_weight="0.9"
+      android:textSize="10sp"/>
+
+    <View
+      style="@style/ViewPastRecord"/>
+
+    <TextView
+      style="@style/TVPastRecord"
+      android:id="@+id/tv_product_record"
+      android:layout_width="0dp"
+      android:layout_weight="2.0"
+      android:textSize="10sp"/>
+
+    <View
+      style="@style/ViewPastRecord"/>
+
+    <TextView
+      style="@style/TVPastRecord"
+      android:id="@+id/tv_product_qty"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:textSize="10sp"/>
+
+    <View
+      style="@style/ViewPastRecord"/>
+
+    <TextView
+      style="@style/TVPastRecord"
+      android:id="@+id/tv_bonus"
+      android:layout_width="0dp"
+      android:layout_weight="0.5"
+      android:textSize="10sp"
+      android:visibility="gone"/>
+
+    <View
+      style="@style/ViewPastRecord"
+      android:visibility="gone"/>
+
+    <TextView
+      style="@style/TVPastRecord"
+      android:id="@+id/tv_product_price"
+      android:layout_width="0dp"
+      android:layout_weight="1.1"
+      android:textSize="10sp"/>
+
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:visibility="visible"
+    android:id="@+id/header_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:weightSum="5">
+
+    <TextView
+      android:textSize="12sp"
+      android:textColor="@color/white"
+      android:background="@color/red_offers"
+      android:text="Date"
+      style="@style/TVPastRecord"
+      android:layout_height="60dp"
+      android:layout_width="0dp"
+      android:layout_weight="0.9"/>
+
+    <View
+      android:background="@color/white"
+      style="@style/ViewPastRecord"/>
+
+    <TextView
+      android:textSize="12sp"
+      android:textColor="@color/white"
+      android:background="@color/red_offers"
+      style="@style/TVPastRecord"
+      android:text="Product"
+      android:layout_height="60dp"
+      android:layout_width="0dp"
+      android:layout_weight="2.0"/>
+
+    <View
+      android:background="@color/white"
+      style="@style/ViewPastRecord"/>
+
+    <TextView
+      android:textSize="12sp"
+      android:textColor="@color/white"
+      android:background="@color/red_offers"
+      android:text="Commercial Goods"
+      style="@style/TVPastRecord"
+      android:layout_height="60dp"
+      android:layout_width="0dp"
+      android:layout_weight="1"/>
+
+    <View
+      android:background="@color/white"
+      style="@style/ViewPastRecord"/>
+
+    <TextView
+      android:textSize="12sp"
+      android:textColor="@color/white"
+      android:background="@color/red_offers"
+      android:text="Bonus"
+      style="@style/TVPastRecord"
+      android:layout_height="60dp"
+      android:layout_width="0dp"
+      android:layout_weight="0.5"
+      android:visibility="gone"/>
+
+    <View
+      android:background="@color/white"
+      style="@style/ViewPastRecord"
+      android:visibility="gone"/>
+
+
+    <TextView
+      android:textSize="12sp"
+      android:textColor="@color/white"
+      android:background="@color/red_offers"
+      android:text="Invoice Value (HKD)"
+      style="@style/TVPastRecord"
+      android:layout_height="60dp"
+      android:layout_width="0dp"
+      android:layout_weight="1.1"/>
+
+  </LinearLayout>
+
+</LinearLayout>
