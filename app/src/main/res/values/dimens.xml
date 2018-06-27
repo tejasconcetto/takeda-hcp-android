@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <!-- Default screen margins, per the Android Design guidelines. -->
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+  <dimen name="fab_margin">25dp</dimen>
+
+  <dimen name="design_fab_image_size" tools:override="true">50dp</dimen>
+
+  <!-- Padding dimen -->
+  <dimen name="popup_padding">15dp</dimen>
+
+  <!-- Margin dimen -->
+  <dimen name="margin_5">5dp</dimen>
+  <dimen name="margin_10">10dp</dimen>
+  <dimen name="margin_15">15dp</dimen>
+  <dimen name="margin_20">20dp</dimen>
+  <dimen name="margin_30">30dp</dimen>
+  <dimen name="margin_40">40dp</dimen>
+  <dimen name="margin_50">50dp</dimen>
+
+  <!-- Divider dimen -->
+  <dimen name="divider_height">1dp</dimen>
+
+  <!-- Splash dimen -->
+  <dimen name="logo_dimen">130dp</dimen>
+
+  <!-- A Bar dimen -->
+  <dimen name="abar_back_dimen">25dp</dimen>
+
+  <!-- A Bar dimen -->
+  <dimen name="buttonRadius">20dp</dimen>
+
+
+  <!-- Layout Padding -->
+  <dimen name="paddingMargin">25dp</dimen>
+  <dimen name="paddingLeft">15dp</dimen>
+  <dimen name="paddingRight">15dp</dimen>
+  <dimen name="paddingTop">25dp</dimen>
+  <dimen name="paddingBottom">25dp</dimen>
+
+  <dimen name="settings_margin">10dp</dimen>
+
+  <dimen name="about_us_img">20dp</dimen>
+
+  <dimen name="header_row_text_size">18sp</dimen>
+
+</resources>

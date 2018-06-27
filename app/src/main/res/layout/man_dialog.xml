@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:padding="@dimen/margin_10"
+    android:id="@+id/titleLayout"
+    android:gravity="center_vertical"
+    android:background="@drawable/otp_popup_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+      style="@style/MyTextViewtheme"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/textView"
+      android:text=""
+      android:textColor="@color/white"
+      android:textSize="22sp"
+      android:textStyle="bold"/>
+
+    <ImageView
+      android:layout_centerVertical="true"
+      android:id="@+id/crossBtn"
+      android:layout_marginRight="@dimen/margin_15"
+      android:src="@drawable/cross_white_icon"
+      android:layout_alignParentRight="true"
+      android:layout_width="18dp"
+      android:layout_height="18dp"/>
+  </RelativeLayout>
+
+  <LinearLayout
+    android:padding="@dimen/margin_15"
+    android:background="@drawable/otp_popup_footer"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioGroup
+      android:id="@+id/url_rbGrp"
+      android:layout_marginBottom="@dimen/margin_10"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <RadioButton
+        android:text="Altustendo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+      <RadioButton
+        android:text="Mentem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+      <RadioButton
+        android:text="Amazon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+  </LinearLayout>
+</LinearLayout>

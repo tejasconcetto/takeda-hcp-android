@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="?android:attr/actionBarSize"
+  android:background="@color/themeBlue"
+  android:gravity="center_vertical">
+
+  <LinearLayout
+    android:id="@+id/backArrow"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_centerVertical="true">
+
+    <ImageView
+      android:layout_width="@dimen/abar_back_dimen"
+      android:layout_height="@dimen/abar_back_dimen"
+      android:layout_marginLeft="@dimen/margin_15"
+      android:layout_marginRight="@dimen/margin_20"
+      android:layout_gravity="center_vertical"
+      android:src="@drawable/icn_back2"/>
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/titleTV"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:text="Page title"
+    android:textColor="@color/white"
+    android:textSize="20sp"/>
+
+  <LinearLayout
+    android:visibility="gone"
+    android:id="@+id/sort_icon_ll"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true">
+
+    <ImageView
+      android:id="@+id/sort_icon"
+      android:layout_width="@dimen/abar_back_dimen"
+      android:layout_height="@dimen/abar_back_dimen"
+      android:layout_marginLeft="@dimen/margin_15"
+      android:layout_marginRight="@dimen/margin_15"
+      android:layout_gravity="center_vertical"
+      android:src="@drawable/sort_filter_icon"/>
+  </LinearLayout>
+
+</RelativeLayout>

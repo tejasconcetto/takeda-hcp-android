@@ -1,0 +1,203 @@
+<android.support.design.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/coordinator_layout"
+  style="@style/MyCoordinatorLayout">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+      android:id="@+id/headerToolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?android:attr/actionBarSize"
+      android:gravity="center_vertical">
+
+      <RelativeLayout
+        android:id="@+id/header_row"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/themeBlue"
+        android:orientation="horizontal">
+
+        <LinearLayout
+          android:id="@+id/backArrow"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_alignParentLeft="true">
+
+          <ImageView
+            android:layout_width="@dimen/abar_back_dimen"
+            android:layout_height="@dimen/abar_back_dimen"
+            android:layout_marginLeft="@dimen/margin_15"
+            android:layout_marginRight="@dimen/margin_20"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icn_back2"/>
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/spinner_title_btn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_centerInParent="true">
+
+          <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:text="Products"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+          <ImageView
+            android:id="@+id/dropdown_button"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/titleTV"
+            android:src="@drawable/dropdown_white"
+            android:visibility="gone"/>
+        </LinearLayout>
+
+        <!--</LinearLayout>-->
+
+        <!--<include-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:layout_weight="1"-->
+        <!--layout="@layout/spinner_layout"/>-->
+
+        <LinearLayout
+          android:id="@+id/actionBtnLayout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true">
+
+          <ImageView
+            android:id="@+id/sort_icon"
+            android:layout_width="@dimen/abar_back_dimen"
+            android:layout_height="@dimen/abar_back_dimen"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_20"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/sort_filter_icon"/>
+
+          <TextView
+            android:id="@+id/cart_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_20"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:padding="5dp"
+            android:background="@drawable/circle_counter"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="99"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+        </LinearLayout>
+
+      </RelativeLayout>
+
+      <RelativeLayout
+        android:id="@+id/search_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+          android:id="@+id/search_edit_text"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:layout_centerVertical="true"
+          android:background="@null"
+          android:hint="Search"
+          android:maxLines="1"
+          android:singleLine="true"
+          android:textColor="@android:color/white"
+          android:textColorHint="@color/white"
+          android:textCursorDrawable="@null"
+          android:textSize="20dp"/>
+
+        <View
+          android:id="@+id/search_et_view"
+          android:layout_width="200dp"
+          android:layout_height="1dp"
+          android:layout_below="@+id/search_edit_text"
+          android:background="@color/white"/>
+
+        <ImageView
+          android:id="@+id/cross_icon"
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:layout_marginLeft="@dimen/margin_10"
+          android:layout_marginRight="@dimen/margin_20"
+          android:layout_centerVertical="true"
+          android:layout_toRightOf="@+id/search_et_view"
+          android:src="@drawable/cross_white_icon"/>
+
+      </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <Spinner
+      android:id="@+id/spinner_new"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_below="@+id/headerToolbar"
+      android:background="@android:color/transparent"
+      android:overScrollMode="never"
+      android:spinnerMode="dialog"
+      />
+
+    <include
+      android:id="@+id/empty_cart_list_layout"
+      layout="@layout/empty_layout"
+      android:visibility="gone"/>
+
+    <RelativeLayout
+      android:id="@+id/mainLayoutList"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@+id/spinner_new">
+
+      <android.support.v7.widget.RecyclerView
+        android:id="@+id/productList"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_above="@+id/order_more_button"
+        android:layout_alignParentTop="true"
+        android:divider="@color/darkerGray"
+        android:dividerHeight="0.5dp"/>
+
+      <Button
+        android:id="@+id/order_more_button"
+        style="@style/MyButtonthemeRed"
+        android:layout_margin="@dimen/margin_10"
+        android:layout_alignParentBottom="true"
+        android:text="ORDER MORE"
+        android:visibility="gone"/>
+    </RelativeLayout>
+  </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

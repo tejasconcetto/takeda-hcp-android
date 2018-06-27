@@ -1,0 +1,12 @@
+<TextView
+  android:padding="15dp"
+  style="@style/MyTextViewtheme"
+  android:layout_centerHorizontal="true"
+  android:id="@+id/spinner_row"
+  android:text="-- Please Category --"
+  android:layout_width="match_parent"
+  android:textStyle="bold"
+  android:textColor="@color/white"
+  android:textSize="18sp"
+  android:background="@drawable/spinner_rect_white"
+  xmlns:android="http://schemas.android.com/apk/res/android"/>

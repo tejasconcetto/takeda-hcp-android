@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/relative_layout_user"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingTop="@dimen/margin_15"
+  android:paddingBottom="@dimen/margin_15"
+  android:paddingLeft="@dimen/margin_10"
+  android:paddingRight="@dimen/margin_10"
+  android:background="@color/white"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="false">
+
+    <ImageView
+      android:id="@+id/selected_image"
+      style="@style/ImageViewMainMenutheme"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:src="@drawable/list_arrow_enquiry"
+      android:visibility="gone"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/sales_person_image"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_alignParentStart="true"
+      android:layout_centerVertical="true"
+      app:civ_border_color="@android:color/transparent"
+      app:civ_border_width="0dp"/>
+
+    <LinearLayout
+      android:id="@+id/user_layout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:layout_toRightOf="@+id/sales_person_image"
+
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/sales_name_tv"
+        style="@style/MyTextViewAddress"
+        android:textStyle="bold"
+        android:text="Akshay Bissa"
+        android:textSize="18sp"/>
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+          android:id="@+id/email_details_layout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:visibility="gone">
+
+          <ImageView
+            style="@style/ImageViewMainMenutheme"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/email_icon"/>
+
+          <TextView
+            android:id="@+id/tv_email_enquiry"
+            style="@style/MyTextViewAddress"
+            android:layout_gravity="center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="email@gmail.com"
+            android:textSize="16sp"/>
+
+        </LinearLayout>
+
+
+        <View
+          android:layout_width="1dp"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="@dimen/margin_15"
+          android:layout_marginRight="@dimen/margin_15"
+          android:background="@color/themeBlue"
+          android:visibility="gone"/>
+
+        <LinearLayout
+          android:id="@+id/call_details_layout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1">
+
+          <ImageView
+            style="@style/ImageViewMainMenutheme"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/call_icon"/>
+
+          <TextView
+            android:id="@+id/tv_mobile_enquiry"
+            style="@style/MyTextViewAddress"
+            android:layout_gravity="center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="9461144182"
+            android:textSize="16sp"/>
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </RelativeLayout>
+</LinearLayout>

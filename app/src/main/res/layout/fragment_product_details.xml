@@ -1,0 +1,206 @@
+<android.support.design.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/coordinator_layout"
+  android:background="@color/white"
+  style="@style/MyCoordinatorLayout">
+
+  <ScrollView
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <include
+        layout="@layout/slider_layout"/>
+
+      <LinearLayout
+        android:paddingRight="@dimen/margin_20"
+        android:paddingLeft="@dimen/margin_20"
+        android:id="@+id/user_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/product_image"
+        android:layout_toLeftOf="@+id/edit_remove_layout"
+        android:orientation="vertical">
+
+        <View
+          android:background="@color/emptyGray"
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"/>
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_15"
+          android:textSize="20sp"
+          style="@style/MyTextViewAddress"
+          android:id="@+id/product_name"
+          android:text="Akshay Bissa"
+          android:textStyle="bold"/>
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_5"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:id="@+id/tv_category"
+          android:text="Category : "/>
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_5"
+          android:layout_marginBottom="@dimen/margin_10"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:id="@+id/tv_description"
+          android:text="Description : "/>
+
+        <!--<View-->
+        <!--android:background="@color/emptyGray"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"/>-->
+
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_15"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:text="Ingredient"/>
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_5"
+          android:layout_marginBottom="@dimen/margin_10"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:id="@+id/tv_ingredient"
+          android:text="Description : "/>
+
+        <!--<View-->
+        <!--android:background="@color/emptyGray"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"/>-->
+
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_15"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:text="Drug Class"/>
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_5"
+          android:layout_marginBottom="@dimen/margin_10"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:id="@+id/tv_drug_class"
+          android:text="Description : "/>
+
+        <!--<View-->
+        <!--android:background="@color/emptyGray"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"/>-->
+
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_15"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:text="Indication"/>
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_5"
+          android:layout_marginBottom="@dimen/margin_10"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:id="@+id/tv_indication"
+          android:text="Description : "/>
+
+        <!--<View-->
+        <!--android:background="@color/emptyGray"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"/>-->
+
+
+        <TextView
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:text="Dosage"/>
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_5"
+          android:layout_marginBottom="@dimen/margin_10"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:id="@+id/tv_dosage"
+          android:text="Description : "/>
+
+        <!--<View-->
+        <!--android:background="@color/emptyGray"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"/>-->
+
+
+        <TextView
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:text="Reference"/>
+
+        <TextView
+          android:layout_marginTop="@dimen/margin_5"
+          android:layout_marginBottom="@dimen/margin_10"
+          android:textSize="16sp"
+          android:layout_gravity="center_vertical"
+          style="@style/MyTextViewAddress"
+          android:id="@+id/tv_reference"
+          android:text="Description : "/>
+
+        <View
+          android:background="@color/emptyGray"
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"/>
+
+        <Button
+          android:layout_alignParentBottom="true"
+          android:layout_margin="@dimen/margin_10"
+          style="@style/MyButtonthemeRed"
+          android:id="@+id/order_more_btn"
+          android:text="ORDER MORE"/>
+
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+      android:layout_above="@+id/download_btn"
+      android:id="@+id/web_view_frag"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    </WebView>
+
+    <Button
+      android:layout_alignParentBottom="true"
+      android:layout_margin="@dimen/margin_10"
+      style="@style/MyButtonthemeRed"
+      android:id="@+id/download_btn"
+      android:text="Full Prescribing Information"/>
+
+  </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

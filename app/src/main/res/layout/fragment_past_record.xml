@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:id="@+id/filter_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/margin_10"
+      android:paddingLeft="@dimen/margin_10"
+      android:paddingRight="@dimen/margin_10"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+      <TextView
+        android:id="@+id/by_date"
+        style="@style/MyTextViewAddress"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="@dimen/margin_10"
+        android:background="@drawable/selected_textview_left"
+        android:gravity="center"
+        android:text="Table By Date"
+        android:textColor="@android:color/white"
+        android:textSize="19sp"/>
+
+
+      <TextView
+        android:id="@+id/by_product"
+        style="@style/MyTextViewAddress"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/margin_10"
+        android:background="@drawable/unselected_textview_right"
+        android:gravity="center"
+        android:text="Table By Product"
+        android:textColor="@android:color/white"
+        android:textSize="19sp"/>
+
+    </LinearLayout>
+
+    <!--<ScrollView-->
+    <!--android:layout_above="@+id/enquiry_button"-->
+    <!--android:id="@+id/list_scroll"-->
+    <!--android:layout_below="@+id/filter_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<LinearLayout-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/pastRecordList"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="2dp"
+      android:layout_marginLeft="0dp"
+      android:layout_marginRight="-2dp"
+      android:layout_above="@+id/enquiry_button"
+      android:layout_below="@+id/filter_layout"
+      android:paddingTop="@dimen/margin_5"
+      android:paddingLeft="0dp"
+      android:paddingRight="0dp"
+      android:divider="@null"/>
+
+    <View
+      android:id="@+id/viewList"
+      android:layout_width="fill_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="2dp"
+      android:layout_marginLeft="2dp"
+      android:layout_marginRight="2dp"
+      android:layout_below="@+id/pastRecordList"
+      android:paddingLeft="@dimen/margin_5"
+      android:paddingRight="@dimen/margin_5"
+      android:background="@color/red_offers"
+      android:visibility="gone"/>
+
+
+    <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+
+    <Button
+      android:id="@+id/enquiry_button"
+      style="@style/MyButtonthemeBlue"
+      android:layout_marginTop="@dimen/margin_15"
+      android:layout_marginBottom="@dimen/margin_15"
+      android:layout_marginLeft="@dimen/margin_30"
+      android:layout_marginRight="@dimen/margin_30"
+      android:layout_alignParentBottom="true"
+      android:text="ENQUIRY"/>
+
+
+    <Button
+      android:id="@+id/order_more_button"
+      style="@style/MyButtonthemeRed"
+      android:layout_marginTop="@dimen/margin_15"
+      android:layout_marginBottom="@dimen/margin_15"
+      android:layout_marginLeft="@dimen/margin_30"
+      android:layout_marginRight="@dimen/margin_30"
+      android:layout_alignParentBottom="true"
+      android:padding="@dimen/margin_10"
+      android:text="ENQUIRY"
+      android:visibility="gone"/>
+
+    <Spinner
+      android:scrollbars="none"
+      android:id="@+id/filter_spinner"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_centerInParent="true"
+      android:background="@android:color/transparent"
+      android:overScrollMode="never"
+      android:spinnerMode="dialog"
+      />
+
+
+  </RelativeLayout>
+</LinearLayout>

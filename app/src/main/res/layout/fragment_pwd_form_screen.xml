@@ -1,0 +1,110 @@
+<android.support.design.widget.CoordinatorLayout
+  android:id="@+id/coordinator_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/MyCoordinatorLayout">
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:orientation="vertical">
+
+    <ScrollView
+      android:scrollbars="none"
+      android:id="@+id/login_form"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fillViewport="true">
+
+      <LinearLayout
+        android:gravity="center"
+        android:padding="@dimen/paddingMargin"
+        android:id="@+id/email_login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <include
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          layout="@layout/logo_layout"/>
+
+        <!--  First Name-->
+        <EditText
+          android:layout_marginTop="@dimen/margin_30"
+          style="@style/MyETtheme"
+          android:id="@+id/token_pwd"
+          android:hint="Current Password"
+          android:inputType="textPassword"/>
+
+        <TextView
+          android:visibility="gone"
+          android:layout_gravity="left"
+          android:id="@+id/token_error_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Invalid Current Password"
+          android:textColor="@color/error_red"
+          android:textSize="16sp"/>
+
+
+        <!-- Password-->
+        <EditText
+          android:layout_marginTop="@dimen/margin_15"
+          android:id="@+id/new_pwd"
+          style="@style/MyETtheme"
+          android:hint="New Password"
+          android:inputType="textPassword"/>
+
+        <TextView
+          android:visibility="gone"
+          android:layout_gravity="left"
+          android:id="@+id/pwd_error_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/error_incorrect_password"
+          android:textColor="@color/error_red"
+          android:textSize="16sp"/>
+
+
+        <!-- Confirm Password-->
+        <EditText
+          android:layout_marginTop="@dimen/margin_15"
+          android:id="@+id/confirm_pwd"
+          style="@style/MyETtheme"
+          android:hint="Confirm New Password"
+          android:inputType="textPassword"/>
+
+        <TextView
+          android:visibility="gone"
+          android:layout_gravity="left"
+          android:id="@+id/confirm_pwd_error_tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/error_incorrect_c_pwd"
+          android:textColor="@color/error_red"
+          android:textSize="16sp"/>
+
+
+        <TextView
+          android:layout_gravity="left"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/pw_desc"
+          android:textColor="@color/error_red"
+          android:textSize="16sp"
+          android:layout_marginTop="@dimen/margin_20"/>
+
+        <Button
+          android:layout_marginRight="@dimen/margin_40"
+          android:layout_marginLeft="@dimen/margin_40"
+          android:id="@+id/submit_button"
+          style="@style/MyButtonthemeBlue"
+          android:layout_marginTop="@dimen/margin_30"
+          android:text="@string/submit_pin"/>
+
+      </LinearLayout>
+
+    </ScrollView>
+  </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

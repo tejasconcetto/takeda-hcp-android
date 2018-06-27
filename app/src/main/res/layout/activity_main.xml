@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+  android:id="@+id/coordinator_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/MyCoordinatorLayout">
+
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/margin_20"
+    android:background="@drawable/login_background"
+    android:layout_centerHorizontal="true"
+    android:layout_height="match_parent">
+
+    <include
+      android:id="@+id/logo_layout"
+      layout="@layout/logo_layout"/>
+
+    <TextView
+      android:layout_marginBottom="@dimen/margin_30"
+      android:layout_alignParentBottom="true"
+      android:layout_above="@+id/copyright"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/appLoadingLine"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Loading..."
+      android:textColor="@color/white"
+      android:textSize="18sp"/>
+
+    <TextView
+      android:id="@+id/copyright"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/copyrightTV"
+      android:textColor="@color/white"
+      android:textSize="18sp"/>
+  </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

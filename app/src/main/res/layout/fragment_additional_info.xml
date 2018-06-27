@@ -1,0 +1,321 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:padding="@dimen/margin_10"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="@dimen/margin_10"
+        android:id="@+id/main_layout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+          android:textColor="@android:color/black"
+          android:id="@+id/user_name"
+          style="@style/MyTextViewAddress"
+          android:textSize="28sp"
+          android:gravity="center"
+          android:layout_width="wrap_content"/>
+
+        <LinearLayout
+          style="@style/SettingsLayout">
+
+          <TextView
+            style="@style/MyTextViewSettingsBold"
+            android:layout_marginLeft="10dp"
+            android:text="Fax : "/>
+
+          <TextView
+            android:id="@+id/user_fax_no"
+            style="@style/MyTextViewSettingsRegular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+          style="@style/SettingsLayout">
+
+          <TextView
+            style="@style/MyTextViewSettingsBold"
+            android:layout_marginLeft="10dp"
+            android:text="Speciality : "/>
+
+          <TextView
+            android:id="@+id/user_speciality"
+            style="@style/MyTextViewSettingsRegular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+          style="@style/SettingsLayout">
+
+          <TextView
+            style="@style/MyTextViewSettingsBold"
+            android:layout_marginLeft="10dp"
+            android:text="Sector : "/>
+
+          <TextView
+            android:id="@+id/user_sector"
+            style="@style/MyTextViewSettingsRegular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+          style="@style/SettingsLayout">
+
+          <TextView
+            style="@style/MyTextViewSettingsBold"
+            android:layout_marginLeft="10dp"
+            android:text="Address : "/>
+
+          <TextView
+            android:id="@+id/user_address"
+            style="@style/MyTextViewSettingsRegular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+          style="@style/SettingsLayout">
+
+          <TextView
+            style="@style/MyTextViewSettingsBold"
+            android:layout_marginLeft="10dp"
+            android:text="Account Number : "/>
+
+          <TextView
+            android:id="@+id/user_account_no"
+            style="@style/MyTextViewSettingsRegular"/>
+
+        </LinearLayout>
+
+        <View
+          android:layout_marginBottom="@dimen/margin_30"
+          android:layout_marginTop="@dimen/margin_30"
+          android:background="@color/darkerGray"
+          android:layout_width="match_parent"
+          android:layout_height="2dp"/>
+
+
+        <TextView
+          android:textColor="@color/red_offers"
+          style="@style/MyTextViewSettingsRegular"
+          android:id="@+id/app_version"
+          android:text="* FIELDS ARE REQUIRED"/>
+
+        <LinearLayout
+          android:layout_marginRight="@dimen/margin_30"
+          android:layout_marginLeft="@dimen/margin_30"
+          android:layout_marginBottom="@dimen/margin_20"
+          android:layout_alignParentBottom="true"
+          android:id="@+id/login_form_view"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+          <RelativeLayout
+            android:id="@+id/usernameLayout"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+              android:background="@drawable/txt_box_otp"
+              style="@style/MyETtheme"
+              android:id="@+id/username_et"
+              android:hint="Username"
+              android:inputType="text"/>
+
+            <TextView
+              android:layout_below="@+id/username_et"
+              android:visibility="gone"
+              android:id="@+id/username_et_error_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/unverified_user"
+              android:textColor="@color/error_red"
+              android:textSize="16sp"/>
+
+            <TextView
+              android:layout_marginRight="@dimen/margin_20"
+              android:layout_centerVertical="true"
+              android:layout_alignParentRight="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="*"
+              android:textColor="@color/error_red"
+              android:textSize="25sp"/>
+          </RelativeLayout>
+
+          <RelativeLayout
+            android:id="@+id/pwdLayout"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+              android:background="@drawable/txt_box_otp"
+              style="@style/MyETtheme"
+              android:id="@+id/password_et"
+              android:hint="@string/prompt_password"
+              android:inputType="textPassword"/>
+
+            <TextView
+              android:layout_below="@+id/password_et"
+              android:visibility="gone"
+              android:id="@+id/password_et_error_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/error_incorrect_password"
+              android:textColor="@color/error_red"
+              android:textSize="16sp"/>
+
+            <TextView
+              android:layout_marginRight="@dimen/margin_20"
+              android:layout_centerVertical="true"
+              android:layout_alignParentRight="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="*"
+              android:textColor="@color/error_red"
+              android:textSize="25sp"/>
+          </RelativeLayout>
+
+          <RelativeLayout
+            android:layout_marginTop="@dimen/margin_15"
+            android:id="@+id/cpwdLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+              android:background="@drawable/txt_box_otp"
+              style="@style/MyETtheme"
+              android:id="@+id/cpassword_et"
+              android:hint="@string/prompt_confirm_password"
+              android:imeOptions="actionGo"
+              android:inputType="textPassword"/>
+
+            <TextView
+              android:layout_below="@+id/cpassword_et"
+              android:visibility="gone"
+              android:id="@+id/cpassword_et_error_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/error_invalid_confirm_password"
+              android:textColor="@color/error_red"
+              android:textSize="16sp"/>
+
+            <TextView
+              android:layout_marginRight="@dimen/margin_20"
+              android:layout_centerVertical="true"
+              android:layout_alignParentRight="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="*"
+              android:textColor="@color/error_red"
+              android:textSize="25sp"/>
+          </RelativeLayout>
+
+          <!-- Username-->
+          <RelativeLayout
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+              android:background="@drawable/txt_box_otp"
+              style="@style/MyETtheme"
+              android:id="@+id/mobile_number_et"
+              android:hint="@string/prompt_mobile_number"
+              android:inputType="phone"/>
+
+            <TextView
+              android:layout_below="@+id/mobile_number_et"
+              android:visibility="gone"
+              android:id="@+id/mobile_number_et_error_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/error_invalid_mobile"
+              android:textColor="@color/error_red"
+              android:textSize="16sp"/>
+
+            <TextView
+              android:visibility="gone"
+              android:layout_marginRight="@dimen/margin_20"
+              android:layout_centerVertical="true"
+              android:layout_alignParentRight="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="*"
+              android:textColor="@color/error_red"
+              android:textSize="25sp"/>
+          </RelativeLayout>
+
+          <!-- Password-->
+          <RelativeLayout
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+              android:background="@drawable/txt_box_otp"
+              style="@style/MyETtheme"
+              android:id="@+id/user_email_et"
+              android:hint="@string/prompt_signup_email"
+              android:imeOptions="actionGo"
+              android:inputType="textEmailAddress"/>
+
+            <TextView
+              android:layout_below="@+id/user_email_et"
+              android:visibility="gone"
+              android:id="@+id/email_et_error_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/error_invalid_email"
+              android:textColor="@color/error_red"
+              android:textSize="16sp"/>
+
+            <TextView
+              android:layout_marginRight="@dimen/margin_20"
+              android:layout_centerVertical="true"
+              android:layout_alignParentRight="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="*"
+              android:textColor="@color/error_red"
+              android:textSize="25sp"/>
+          </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+          android:layout_gravity="left"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/pw_desc"
+          android:textColor="@color/error_red"
+          android:textSize="16sp"
+          />
+
+        <Button
+          android:layout_marginRight="@dimen/margin_30"
+          android:layout_marginLeft="@dimen/margin_30"
+          android:layout_marginTop="@dimen/margin_10"
+          android:layout_alignParentBottom="true"
+          style="@style/MyButtonthemeRed"
+          android:id="@+id/proceed_button"
+          android:text="PROCEED"/>
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

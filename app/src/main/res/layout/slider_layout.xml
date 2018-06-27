@@ -1,0 +1,54 @@
+<LinearLayout
+  android:id="@+id/sliderLayout"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <RelativeLayout
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+      android:clickable="false"
+      android:id="@+id/viewpager_default"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+
+    <me.relex.circleindicator.CircleIndicator
+      android:id="@+id/indicator_default"
+      android:layout_width="fill_parent"
+      android:layout_height="30dp"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"
+      android:clickable="false"
+      app:ci_animator="@animator/indicator_animator"
+      app:ci_animator_reverse="@animator/indicator_animator_reverse"
+      app:ci_drawable="@drawable/black_radius_square"/>
+
+    <ImageView
+      android:padding="20dp"
+      android:layout_height="60dp"
+      android:layout_width="60dp"
+      android:id="@+id/left_arrow_btn"
+      android:layout_centerVertical="true"
+      android:layout_marginLeft="@dimen/margin_20"
+      android:layout_alignParentLeft="true"
+      style="@style/ImageViewMainMenutheme"
+      android:src="@drawable/arrow_left"/>
+
+    <ImageView
+      android:padding="20dp"
+      android:layout_height="60dp"
+      android:layout_width="60dp"
+      android:id="@+id/right_arrow_btn"
+      android:layout_centerVertical="true"
+      android:layout_marginRight="@dimen/margin_20"
+      android:layout_alignParentRight="true"
+      style="@style/ImageViewMainMenutheme"
+      android:src="@drawable/arrow_right"/>
+
+  </RelativeLayout>
+</LinearLayout>
