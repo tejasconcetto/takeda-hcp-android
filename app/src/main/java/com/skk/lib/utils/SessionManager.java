@@ -34,6 +34,7 @@ public class SessionManager {
   public static final String IS_REM_ME = "IsRememberMe";
   private static final String IS_LOGIN = "IsLoggedIn";
   public static final String KEY_USER_ID = "userid";
+  public static final String KEY_DOC_TITLE = "title";
   public static final String KEY_USER_JSON = "userJSON";
   public static final String KEY_ACCESS_TOKEN = "access_token";
   public static final String IS_FIRST_TIME = "first_time";
@@ -41,7 +42,10 @@ public class SessionManager {
   public static final String KEY_BASE_URL = "base_url";
   public static final String KEY_PURCHASE_HISTORY_FLAG = "purchase_history_flag";
   public static String BASE_URL = "http://mentem.in/takeda_backend/api/Dummy";
-  public static String BASE_URL_AWS = "http://192.168.123.107/takeda-hcp-Admin/api/";//"http://ec2-52-77-230-85.ap-southeast-1.compute.amazonaws.com/api/";
+  public static String BASE_URL_AWS = "http://13.229.235.139/api/";
+  //"http://13.229.235.139/api/";
+  // "http://192.168.123.107/takeda-hcp-Admin/api/";
+  // "http://ec2-52-77-230-85.ap-southeast-1.compute.amazonaws.com/api/";
   // public static String BASE_URL_AWS = "https://hcp.takeda-hk.com/api/";
   public static String BASE_URL_ALTUS = "http://altustendo.com/takeda_backend/api/Dummy";
 
@@ -69,6 +73,14 @@ public class SessionManager {
     editor.commit();
   }
 
+
+  public void setKeyDocTitle(String title) {
+    editor.putString(KEY_DOC_TITLE, title).apply();
+  }
+
+  public String getKeyDocTitle() {
+    return pref.getString(KEY_DOC_TITLE, "");
+  }
   /**
    * Check login method wil check user login status
    * If false it will redirect user to login page

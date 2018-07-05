@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_weight="1"
+  android:orientation="horizontal">
+
+  <TextView
+    android:id="@+id/spinner_col_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.5"
+    android:layout_gravity="end"
+    android:padding="10dp"
+    android:background="@drawable/spinner_rect_white"
+    android:text="-- Please Category --"
+    android:textAlignment="textEnd"
+    android:textColor="@color/white"
+    android:textSize="14sp"/>
+
+  <TextView
+    android:id="@+id/spinner_col_2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="0.5"
+    android:layout_gravity="start"
+    android:padding="10dp"
+    android:background="@drawable/spinner_rect_white"
+    android:text="-- Please Category --"
+    android:textAlignment="viewStart"
+    android:textColor="@color/white"
+    android:textSize="14sp"/>
+
+
+</LinearLayout>

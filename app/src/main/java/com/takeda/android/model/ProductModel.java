@@ -32,7 +32,7 @@ public class ProductModel implements Serializable {
     public ArrayList<CategoryArrDataModel> catData = new ArrayList<CategoryArrDataModel>();
 
     @SerializedName("purchase_history_flag")
-    public int purchaseHistoryFlag;
+    public int purchaseHistoryFlag = 1;
   }
 
   public static class CategoryArrDataModel implements Serializable {

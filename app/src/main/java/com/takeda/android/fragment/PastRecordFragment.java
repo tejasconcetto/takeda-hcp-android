@@ -1,5 +1,6 @@
 package com.takeda.android.fragment;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -14,8 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -25,6 +25,8 @@ import com.skk.lib.BaseClasses.BaseFragment;
 import com.skk.lib.utils.SessionManager;
 import com.takeda.android.R;
 import com.takeda.android.activities.MiscActivity;
+import com.takeda.android.adapters.FilterItemsAdapter;
+import com.takeda.android.adapters.FilterItemsAdapter.OnItemSelected;
 import com.takeda.android.adapters.PastRecordAdapter;
 import com.takeda.android.async.Params;
 import com.takeda.android.model.CustomerRecordModel;
@@ -61,6 +63,7 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
   ArrayList<String> customerIds;
   ArrayList<String> districtIds;
   private boolean isSelected = true;
+  ArrayList<String> filterItems;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -127,14 +130,14 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
     }
   }
 
-  private void setSpinnerAdapterClick() {
+ /* private void setSpinnerAdapterClick() {
     isSelected = false;
     if (filterSpinner.getOnItemSelectedListener() == null) {
       filterSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
           filterSpinner.setVisibility(View.GONE);
-          if (position < customerIds.size()) {
+          if (position <= customerIds.size()) {
             filterDataByCustomerId(((TextView) view).getText().toString());
           } else {
             filterDataByDistrictId(((TextView) view).getText().toString());
@@ -148,13 +151,16 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
         }
       });
     }
-  }
+  }*/
 
   private void filterDataByDistrictId(String districtId) {
     if (pastRecordListArray == null) {
       pastRecordListArray = new ArrayList<>();
     }
     pastRecordListArray.clear();
+    if (pastRecordAdapter != null) {
+      pastRecordAdapter.notifyDataSetChanged();
+    }
     dialog.show();
 
     try {
@@ -206,7 +212,7 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
 
 
                 } else {
-                  msgAlertDialog("Error", purchaseModel.response.statusMessage);
+                  // msgAlertDialog("Error", purchaseModel.response.statusMessage);
                 }
 
                 if (dialog.isShowing()) {
@@ -243,6 +249,9 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
       pastRecordListArray = new ArrayList<>();
     }
     pastRecordListArray.clear();
+    if (pastRecordAdapter != null) {
+      pastRecordAdapter.notifyDataSetChanged();
+    }
     dialog.show();
 
     try {
@@ -294,7 +303,8 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
 
 
                 } else {
-                  msgAlertDialog("Error", purchaseModel.response.statusMessage);
+                  mHandler.sendEmptyMessage(1);
+                  //msgAlertDialog("Error", purchaseModel.response.statusMessage);
                 }
 
                 if (dialog.isShowing()) {
@@ -353,10 +363,18 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
                   .getResult().getCustomerIds();
               districtIds = customerRecordModel.getResponse().getData()
                   .getResult().getDistricts();
-              ArrayList<String> filterItems = new ArrayList<>();
+              filterItems = new ArrayList<>();
+              filterItems.add("Customer ID");
               filterItems.addAll(customerIds);
+              filterItems.add("District");
               filterItems.addAll(districtIds);
-              setAdapter(filterItems);
+              if (filterItems.size() > 0) {
+                setAdapter(filterItems);
+              } else {
+                if (getActivity() instanceof MiscActivity) {
+                  ((MiscActivity) getActivity()).mSortIconLl.setVisibility(View.GONE);
+                }
+              }
 
             }
 
@@ -383,16 +401,46 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
         @Override
         public void onClick(View v) {
           //startActivityForResult(new Intent(mContext, FilterOptionsActivity.class), Constants.FILTER_RESULT_CODE);
-          filterSpinner.setVisibility(View.VISIBLE);
+         /* filterSpinner.setVisibility(View.VISIBLE);
           filterSpinner.performClick();
           if (isSelected) {
-            filterSpinner.setSelected(false);
-            filterSpinner.setSelection(0, false);
-            setSpinnerAdapterClick();
-          }
+            if(filterItems.size()>0) {
+              filterSpinner.setSelected(false);
+              filterSpinner.setSelection(filterItems.size() - 1, false);
+              setSpinnerAdapterClick();
+            }
+          }*/
+          buildFilterPopup();
         }
       });
     }
+  }
+
+  private void buildFilterPopup() {
+    final Dialog dialog = new Dialog(mContext);
+    //set layout custom
+    dialog.setContentView(R.layout.filter_popup);
+    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    final RecyclerView rvcaddy = dialog.findViewById(R.id.filter_items_recyclerView);
+    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext);
+    rvcaddy.setLayoutManager(mLayoutManager);
+    FilterItemsAdapter filterItemsAdapter = new FilterItemsAdapter(mContext, customerIds,
+        districtIds);
+    // Add some item here to show the list.
+    filterItemsAdapter.setOnItemSelectedListener(new OnItemSelected() {
+      @Override
+      public void onItemClickListener(TextView textView, String selctedItem) {
+        dialog.dismiss();
+        if (textView.getTag().equals(getString(R.string.customer_id))) {
+          filterDataByCustomerId(selctedItem);
+        } else {
+          filterDataByDistrictId(selctedItem);
+        }
+      }
+    });
+    rvcaddy.setAdapter(filterItemsAdapter);
+    dialog.show();
+
   }
 
   void fetchPastRecords(final String sort_type) {
