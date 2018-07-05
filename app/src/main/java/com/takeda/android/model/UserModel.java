@@ -14,6 +14,9 @@ public class UserModel implements Serializable {
   @SerializedName("doctor_id")
   public String doctor_id;
 
+  @SerializedName("title")
+  public String title;
+
   @SerializedName("doctor_name")
   public String doctor_name;
 

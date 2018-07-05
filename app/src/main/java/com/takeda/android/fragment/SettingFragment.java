@@ -93,7 +93,8 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
       String phone = jsonObject.getString(Params.json_mobile_number).equals("") ? "-"
           : jsonObject.getString(Params.json_mobile_number);
 
-      ((TextView) mView.findViewById(R.id.user_name)).setText("Dr. " + doc_name);
+      ((TextView) mView.findViewById(R.id.user_name))
+          .setText(session.getKeyDocTitle() + " " + doc_name);
       ((TextView) mView.findViewById(R.id.user_email)).setText(email);
       ((TextView) mView.findViewById(R.id.user_fax_no)).setText(fax_no);
       ((TextView) mView.findViewById(R.id.user_account_no)).setText(account_no);

@@ -136,7 +136,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
       jsonObject = new JSONObject(session.getUserDetails().get(SessionManager.KEY_USER_JSON));
 
       ((TextView) findViewById(R.id.user_name))
-          .setText("Dr. " + jsonObject.getString(Params.json_doc_name));
+          .setText(session.getKeyDocTitle() + " " + jsonObject.getString(Params.json_doc_name));
       ((TextView) findViewById(R.id.user_id))
           .setText("Customer# " + jsonObject.getString(Params.json_acct_number));
       ((TextView) findViewById(R.id.sales_name))

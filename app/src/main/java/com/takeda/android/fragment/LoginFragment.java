@@ -254,6 +254,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener,
           response.response.dataUser.mobile_number,
           response.response.dataUser.access_token,
           response.response.dataUser.toJSON());
+      session.setKeyDocTitle(response.response.dataUser.title);
       ((BaseActivity) getActivity()).init(new Runnable() {
         @Override
         public void run() {

@@ -42,6 +42,7 @@ public class Params {
   public static String request_code_register_event = "interested-event";
 
   public static String json_doc_name = "doctor_name";
+  public static String json_doc_title = "title";
   public static String json_acct_number = "account_number";
   public static String json_mobile_number = "mobile_number";
   public static String json_doc_username = "user_name";
