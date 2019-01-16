@@ -6,13 +6,14 @@
     "apkInfo": {
       "type": "MAIN",
       "splits": [],
-      "versionCode": 2
+      "versionCode": 3,
+      "versionName": "1.3",
+      "enabled": true,
+      "outputFile": "app-release.apk",
+      "fullName": "release",
+      "baseName": "release"
     },
     "path": "app-release.apk",
-    "properties": {
-      "packageId": "com.takeda.android",
-      "split": "",
-      "minSdkVersion": "21"
-    }
+    "properties": {}
   }
 ]

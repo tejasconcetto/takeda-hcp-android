@@ -261,6 +261,8 @@
   <string name="pw_desc">Your password must contain: \n* 8 or more characters \n* Upper-case and lower-case letters \n* One or more numerical digits</string>
   <string name="customer_id">Customer ID</string>
   <string name="district">District</string>
+    <string name="event_organiser">Event Organiser</string>
+    <string name="event_period">Event Period</string>
 
 
 </resources>

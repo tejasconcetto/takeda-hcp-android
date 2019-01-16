@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "565581187039",
+    "firebase_url": "https://takeda-716ed.firebaseio.com",
+    "project_id": "takeda-716ed",
+    "storage_bucket": "takeda-716ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565581187039:android:aa9c9ceb1befb069",
+        "android_client_info": {
+          "package_name": "com.takeda.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565581187039-i2l68bl5dss80tr26ocp2hjqpm75lv1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQI7kLngaUYSliwCLAtDVcsWBHhGzcJoI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

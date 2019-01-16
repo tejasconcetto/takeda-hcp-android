@@ -2,15 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.takeda.android">
 
-  <uses-permission android:name="android.permission.GET_TASKS"/>
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-  <uses-permission android:name="android.permission.RECEIVE_SMS"/>
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
   <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-  <uses-permission android:name="android.permission.CALL_PHONE"/>
 
   <uses-feature
     android:glEsVersion="0x00020000"
@@ -80,9 +77,11 @@
       android:screenOrientation="portrait"
       android:windowSoftInputMode="stateHidden"/>
 
-    <receiver android:name="com.skk.lib.SmsListenerModule.SmsListener">
+      <receiver
+          android:name="com.skk.lib.SmsListenerModule.SmsListener"
+          android:exported="true">
       <intent-filter>
-        <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+          <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
       </intent-filter>
     </receiver>
 

@@ -1,0 +1,39 @@
+<resources>
+    <dimen name="splash_icon_width">142dp</dimen>
+    <dimen name="splash_icon_height">88dp</dimen>
+    <dimen name="extra_small_text_size">14sp</dimen>
+    <dimen name="small_text_size">15sp</dimen>
+    <dimen name="default_text_size">16sp</dimen>
+    <dimen name="medium_text_size">18sp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+    <dimen name="ultra_large_text_size">29sp</dimen>
+    <dimen name="largest_text_size">58sp</dimen>
+    <dimen name="margin_10">19dp</dimen>
+    <dimen name="margin_30_start_end">42dp</dimen>
+    <dimen name="margin_5">10dp</dimen>
+    <dimen name="margin_50">60dp</dimen>
+    <dimen name="width_30">42dp</dimen>
+    <dimen name="margin_20">30dp</dimen>
+    <dimen name="width_80">90dp</dimen>
+    <dimen name="height_35dp">42dp</dimen>
+    <dimen name="width_1">2dp</dimen>
+    <dimen name="toolbar_icon_width">69dp</dimen>
+    <dimen name="toolbar_icon_height">42dp</dimen>
+    <dimen name="radius_2">4dp</dimen>
+    <dimen name="padding_8dp">14dp</dimen>
+    <dimen name="order_no_width">175dp</dimen>
+    <dimen name="width_200">290dp</dimen>
+    <dimen name="width_50">60dp</dimen>
+    <dimen name="width_60">70dp</dimen>
+    <dimen name="height_30">36dp</dimen>
+    <dimen name="width_300">390dp</dimen>
+    <dimen name="height_120">132dp</dimen>
+    <dimen name="width_150">175dp</dimen>
+    <dimen name="width_280">330dp</dimen>
+    <dimen name="width_15">23dp</dimen>
+    <dimen name="width_90dp">100dp</dimen>
+    <dimen name="width_70dp">89dp</dimen>
+    <dimen name="width_65dp">80dp</dimen>
+    <dimen name="height_40dp">47dp</dimen>
+
+</resources>

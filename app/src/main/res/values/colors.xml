@@ -54,5 +54,12 @@
   <color name="switchThumbkNormal">#64b5f6</color>
   <color name="filter_text_not_selected">#767676</color>
   <color name="filter_text_selected">#282828</color>
-
+  <color name="calendar_border_red">#fe6073</color>
+  <color name="calendar_circle_red">#dd2442</color>
+  <color name="calendar_title">#555555</color>
+  <color name="calendar_label_title">#828282</color>
+  <color name="calendar_label_text">#909090</color>
+  <color name="calendar_icon">#7c7c7c</color>
+  <color name="calendar_bg_light">#d9d9d9</color>
+  <color name="calendar_bg_dark">#cdcdcd</color>
 </resources>

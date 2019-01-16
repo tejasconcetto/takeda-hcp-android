@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
@@ -36,12 +37,15 @@ import com.takeda.android.adapters.EventAdapter;
 import com.takeda.android.model.EventModal;
 import com.takeda.android.rest.ApiInterface;
 import com.takeda.android.rest.RestAdapterService;
+
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
-import org.json.JSONObject;
+
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -483,6 +487,7 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
               if (eventModal.response.data.bookmark_events.equalsIgnoreCase("success")) {
                 eventDateWise.get(pos).bookmarked = setFav
                     .equalsIgnoreCase(EventAdapter.fav);
+                eventAdapter.notifyDataSetChanged();
                 if (eventDateWise.get(pos).bookmarked) {
                   msgAlertDialog("Event Reminder",
                       "You will receive a pop-up reminder at 10am one day before the event.");
