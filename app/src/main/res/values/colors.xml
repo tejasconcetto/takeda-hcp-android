@@ -62,4 +62,5 @@
   <color name="calendar_icon">#7c7c7c</color>
   <color name="calendar_bg_light">#d9d9d9</color>
   <color name="calendar_bg_dark">#cdcdcd</color>
+  <color name="link_color">#0687C3</color>
 </resources>

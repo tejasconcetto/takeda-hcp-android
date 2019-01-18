@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.skk.lib.BaseClasses.BaseActivity;
 import com.skk.lib.BaseClasses.BaseFragment;
 import com.skk.lib.Interfaces.textWatcherCustom;
@@ -23,7 +24,9 @@ import com.takeda.android.async.Params;
 import com.takeda.android.model.LoginModel;
 import com.takeda.android.rest.ApiInterface;
 import com.takeda.android.rest.RestAdapterService;
+
 import org.json.JSONObject;
+
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -292,7 +295,7 @@ public class AdditionalInfoFragment extends BaseFragment implements textWatcherC
         ((TextView) mView.findViewById(R.id.user_sector))
             .setText(jsonObject.getJSONObject("sector").getString("sector_name"));
 
-        userName.setText(jsonObject.getString("user_name"));
+        //userName.setText(jsonObject.getString("user_name"));
         mobileNumber.setText(jsonObject.getString(Params.json_mobile_number));
         email.setText(jsonObject.getString("email"));
 

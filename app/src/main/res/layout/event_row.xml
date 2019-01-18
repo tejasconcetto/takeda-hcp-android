@@ -37,7 +37,7 @@
             android:singleLine="false"
             android:text="Event Title"
             android:textColor="@color/calendar_title"
-            android:textSize="@dimen/medium_text_size"
+            android:textSize="@dimen/default_text_size"
             android:textStyle="bold" />
 
         <!--<TextView-->
@@ -66,8 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/event_date"
-            android:layout_marginTop="@dimen/margin_10"
-            android:orientation="vertical">
+            android:layout_marginTop="@dimen/margin_10">
 
             <TextView
                 android:id="@+id/event_organiser_name_label"
@@ -77,6 +76,8 @@
                 android:text="@string/event_organiser"
                 android:textColor="@color/calendar_label_title"
                 android:textStyle="bold"
+                android:textSize="@dimen/extra_small_text_size"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -84,8 +85,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_5"
+                android:textSize="@dimen/extra_small_text_size"
                 android:textColor="@color/calendar_label_text"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/event_organiser_name_label"
                 app:layout_constraintStart_toEndOf="@+id/event_organiser_name_label" />
 
             <TextView
@@ -96,6 +99,7 @@
                 android:text="@string/event_period"
                 android:textColor="@color/calendar_label_title"
                 android:textStyle="bold"
+                android:textSize="@dimen/extra_small_text_size"
                 app:layout_constraintEnd_toEndOf="@+id/event_organiser_name_label"
                 app:layout_constraintStart_toStartOf="@+id/event_organiser_name_label"
                 app:layout_constraintTop_toBottomOf="@+id/event_organiser_name" />
@@ -103,6 +107,7 @@
             <TextView
                 android:id="@+id/event_period"
                 android:layout_width="0dp"
+                android:textSize="@dimen/extra_small_text_size"
                 android:layout_height="wrap_content"
                 android:textColor="@color/calendar_label_text"
                 app:layout_constraintStart_toStartOf="@+id/event_organiser_name"
@@ -115,7 +120,7 @@
                 android:layout_marginStart="@dimen/margin_10"
                 android:layout_marginTop="@dimen/radius_2"
                 android:textColor="@color/calendar_label_text"
-                android:textSize="@dimen/small_text_size"
+                android:textSize="@dimen/extra_small_text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/event_organiser_name_label"
                 app:layout_constraintTop_toBottomOf="@+id/event_period" />

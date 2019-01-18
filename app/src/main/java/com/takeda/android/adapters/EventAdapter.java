@@ -7,6 +7,7 @@ import android.graphics.Point;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
@@ -26,6 +27,7 @@ import com.skk.lib.BaseClasses.BaseActivity;
 import com.skk.lib.Interfaces.OnBookMarkClick;
 import com.skk.lib.utils.SessionManager;
 import com.takeda.android.R;
+import com.takeda.android.Utilities;
 import com.takeda.android.model.EventModal;
 import com.takeda.android.rest.ApiInterface;
 import com.takeda.android.rest.RestAdapterService;
@@ -37,6 +39,9 @@ import java.util.ArrayList;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+
+import static com.takeda.android.Utilities.openDialogWithOption;
+import static com.takeda.android.Utilities.shareOnSocialMedia;
 
 /**
  * Created by Bharat Gupta on 9/5/2015.
@@ -52,6 +57,7 @@ public class EventAdapter extends BaseAdapter {
     private ArrayList<EventModal.EventsArrDataModel> eventList;
     private OnBookMarkClick clickListen;
     private ProgressDialog dialog;
+    SessionManager sessionManager;
 
     public EventAdapter(BaseActivity a, ArrayList<EventModal.EventsArrDataModel> eventList,
                         OnBookMarkClick markClick) {
@@ -63,6 +69,7 @@ public class EventAdapter extends BaseAdapter {
         dialog = new ProgressDialog(activity);
         dialog.setMessage("Please Wait....");
         dialog.setCancelable(false);
+        sessionManager = new SessionManager(activity);
 
     }
 
@@ -143,11 +150,10 @@ public class EventAdapter extends BaseAdapter {
             holder.tv_NotSelectedTitle.setText(eventListModel.title);
             holder.tv_Event_Description_not_selected.setText(eventListModel.description);
             holder.tv_Event_Description_selected.setText(eventListModel.description);
-            holder.tv_Organiser_not_selected.setText(eventListModel.organiser_name);
-            holder.tv_Organiser_selected.setText(eventListModel.organiser_name);
-            holder.tv_period_selected.setText(eventListModel.period);
-            holder.tv_period_not_selected.setText(eventListModel.period);
-
+            Linkify.addLinks(holder.tv_Event_Description_not_selected, Linkify.PHONE_NUMBERS);
+            Linkify.addLinks(holder.tv_Event_Description_selected, Linkify.PHONE_NUMBERS);
+            holder.tv_Event_Description_not_selected.setLinkTextColor(ContextCompat.getColor(activity, R.color.link_color));
+            holder.tv_Event_Description_selected.setLinkTextColor(ContextCompat.getColor(activity, R.color.link_color));
             System.out.println("eventListModel.id========>" + eventListModel.id);
             System.out.println("eventListModel.start_date========>" + eventListModel.event_date);
 
@@ -202,7 +208,14 @@ public class EventAdapter extends BaseAdapter {
             holder.calendarShare.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    String text = activity.getString(R.string.share_text,
+                            eventList.get(position).title,
+                            eventList.get(position).organiser_name,
+                            eventList.get(position).period,
+                            eventList.get(position).description,
+                            eventList.get(position).click_url,
+                            eventList.get(position).calendarUrl);
+                    shareOnSocialMedia(activity, text);
                 }
             });
 
@@ -278,7 +291,27 @@ public class EventAdapter extends BaseAdapter {
         if (eventListModel.bookmarked) {
             clickListen.OnRowClick(position, not_fav);
         } else if (!eventListModel.bookmarked) {
-            clickListen.OnRowClick(position, fav);
+            if (sessionManager.isCalendarSync())
+                clickListen.OnRowClick(position, fav);
+            else {
+                openDialogWithOption(activity,
+                        activity.getString(R.string.app_name) + " would like to access your Calendar",
+                        activity.getString(R.string.app_name) + " uses your calendar to automatically add events that you are interested in.",
+                        "OK", "Don't Allow",
+                        new Utilities.OnClickOfButtons() {
+                            @Override
+                            public void onClickPositiveBtn() {
+                                sessionManager.setCalendarSync(true);
+                                clickListen.OnRowClick(position, fav);
+                            }
+
+                            @Override
+                            public void onClickNegativiteBtn() {
+                                sessionManager.setCalendarSync(false);
+                                clickListen.OnRowClick(position, fav);
+                            }
+                        });
+            }
         }
     }
 

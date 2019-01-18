@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
+
 import com.takeda.android.BuildConfig;
 import com.takeda.android.activities.LoginActivity;
 import com.takeda.android.model.EventModal;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -41,6 +43,7 @@ public class SessionManager {
   public static final String KEY_NOTIFICATION_STATUS = "notify_status";
   public static final String KEY_BASE_URL = "base_url";
   public static final String KEY_PURCHASE_HISTORY_FLAG = "purchase_history_flag";
+  public static final String KEY_CALENDAR_SYNC_FLAG = "calendar_sync";
   public static String BASE_URL = "http://mentem.in/takeda_backend/api/Dummy";
   public static String BASE_URL_AWS = "http://13.229.235.139/api/";
   //"http://13.229.235.139/api/";
@@ -203,4 +206,15 @@ public class SessionManager {
   public void setAddressArrayData(ArrayList<EventModal> userAddressModals) {
 
   }
+
+  public void setCalendarSync(boolean status) {
+    editor = pref.edit();
+    editor.putBoolean(KEY_CALENDAR_SYNC_FLAG, status);
+    editor.apply();
+  }
+
+  public boolean isCalendarSync() {
+    return pref.getBoolean(KEY_CALENDAR_SYNC_FLAG, false);
+  }
+
 }

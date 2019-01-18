@@ -1,8 +1,5 @@
 package com.takeda.android.fragment;
 
-import static com.takeda.android.async.Params.enquiry_type_general;
-import static com.takeda.android.async.Params.enquiry_type_sales;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -19,20 +16,28 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.skk.lib.BaseClasses.BaseActivity;
 import com.skk.lib.BaseClasses.BaseFragment;
 import com.skk.lib.Interfaces.OnEnquiryClick;
 import com.skk.lib.utils.SessionManager;
 import com.takeda.android.R;
+import com.takeda.android.activities.MiscActivity;
 import com.takeda.android.adapters.EnquiryAdapter;
 import com.takeda.android.model.EnquiryModel;
 import com.takeda.android.rest.ApiInterface;
 import com.takeda.android.rest.RestAdapterService;
-import java.util.ArrayList;
+
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+
+import static com.takeda.android.async.Params.enquiry_type_general;
+import static com.takeda.android.async.Params.enquiry_type_sales;
 
 public class EnquiryFragment extends BaseFragment implements OnEnquiryClick {
   // TODO: Rename parameter arguments, choose names that match
@@ -75,6 +80,7 @@ public class EnquiryFragment extends BaseFragment implements OnEnquiryClick {
   void initView(View view) {
     try {
       mView = view;
+      ((MiscActivity) getActivity()).mSortIconLl.setVisibility(View.GONE);
       enquiryList = view.findViewById(R.id.enquiryList);
       mView.findViewById(R.id.general_enquiry_btn).setOnClickListener(new View.OnClickListener() {
         @Override
@@ -88,7 +94,7 @@ public class EnquiryFragment extends BaseFragment implements OnEnquiryClick {
       enquiryList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-          openDialog("call", position);
+          //openDialog("call", position);
         }
       });
     } catch (Exception e) {

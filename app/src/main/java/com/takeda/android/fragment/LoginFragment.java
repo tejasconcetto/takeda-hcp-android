@@ -22,6 +22,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.skk.lib.BaseClasses.BaseActivity;
 import com.skk.lib.BaseClasses.BaseFragment;
 import com.skk.lib.Interfaces.textWatcherCustom;
@@ -35,7 +36,9 @@ import com.takeda.android.async.resultInterface;
 import com.takeda.android.model.LoginModel;
 import com.takeda.android.rest.ApiInterface;
 import com.takeda.android.rest.RestAdapterService;
+
 import org.json.JSONObject;
+
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -240,7 +243,6 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener,
   void loginRedirect(final LoginModel response) {
 
     System.out.println("firstLogin==========>" + response.response.dataUser.first_login);
-
     if (response.response.dataUser.first_login.equalsIgnoreCase("Yes")) {
       AdditionalInfoFragment addInfoFrag = new AdditionalInfoFragment();
       Bundle bundle = new Bundle();

@@ -9,8 +9,7 @@
         android:orientation="vertical"
         android:paddingLeft="0dp"
         android:paddingTop="@dimen/margin_10"
-        android:paddingRight="0dp"
-        android:paddingBottom="@dimen/margin_10">
+        android:paddingRight="0dp">
 
         <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/calendarView"
@@ -29,8 +28,13 @@
             android:layout_below="@+id/calendarView"
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp"
+            android:scrollbarFadeDuration="0"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@color/red_offers"
+            android:scrollbarTrackVertical="@color/white"
+            android:scrollbarSize="4dp"
             android:overScrollMode="never"
-            android:scrollbars="none" />
+            android:scrollbars="vertical" />
 
         <TextView
             android:id="@+id/noEventTextView"

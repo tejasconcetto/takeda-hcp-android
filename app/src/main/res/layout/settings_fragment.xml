@@ -1,250 +1,323 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:orientation="vertical">
-
-  <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
-      android:padding="@dimen/margin_10"
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
-      <LinearLayout
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:padding="@dimen/margin_10"
-        android:id="@+id/main_layout"
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-          android:textColor="@android:color/black"
-          android:id="@+id/user_name"
-          style="@style/MyTextViewAddress"
-          android:textSize="28sp"
-          android:gravity="center"
-          android:layout_width="wrap_content"/>
-
         <LinearLayout
-          style="@style/SettingsLayout">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_10">
 
-          <TextView
-            style="@style/MyTextViewSettingsBold"
-            android:layout_marginLeft="10dp"
-            android:text="Email : "/>
+            <LinearLayout
+                android:id="@+id/main_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_10">
 
-          <TextView
-            android:id="@+id/user_email"
-            style="@style/MyTextViewSettingsRegular"/>
+                <TextView
+                    android:id="@+id/user_name"
+                    style="@style/MyTextViewAddress"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp" />
 
+                <LinearLayout style="@style/SettingsLayout">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsBold"
+                        android:layout_marginLeft="10dp"
+                        android:text="Email : " />
+
+                    <TextView
+                        android:id="@+id/user_email"
+                        style="@style/MyTextViewSettingsRegular" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/SettingsLayout">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsBold"
+                        android:layout_marginLeft="10dp"
+                        android:text="Phone Number : " />
+
+                    <TextView
+                        android:id="@+id/user_phone"
+                        style="@style/MyTextViewSettingsRegular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/SettingsLayout"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsBold"
+                        android:layout_marginLeft="10dp"
+                        android:text="Fax : " />
+
+                    <TextView
+                        android:id="@+id/user_fax_no"
+                        style="@style/MyTextViewSettingsRegular" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/SettingsLayout">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsBold"
+                        android:layout_marginLeft="10dp"
+                        android:text="Specialty : " />
+
+                    <TextView
+                        android:id="@+id/user_speciality"
+                        style="@style/MyTextViewSettingsRegular" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/SettingsLayout">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsBold"
+                        android:layout_marginLeft="10dp"
+                        android:text="Sector : " />
+
+                    <TextView
+                        android:id="@+id/user_sector"
+                        style="@style/MyTextViewSettingsRegular" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/SettingsLayout"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsBold"
+                        android:layout_marginLeft="10dp"
+                        android:text="Address : " />
+
+                    <TextView
+                        android:id="@+id/user_address"
+                        style="@style/MyTextViewSettingsRegular" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/SettingsLayout">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsBold"
+                        android:layout_marginLeft="10dp"
+                        android:text="Account Number : " />
+
+                    <TextView
+                        android:id="@+id/user_account_no"
+                        style="@style/MyTextViewSettingsRegular" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/margin_30"
+                    android:layout_marginBottom="@dimen/margin_30"
+                    android:background="@color/darkerGray" />
+
+                <TextView
+                    style="@style/MyTextViewSettingsBold"
+                    android:text="Select Language"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsRegular"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:text="Chinese" />
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true" />
+
+                    <TextView
+                        style="@style/MyTextViewSettingsRegular"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:text="English" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/calendar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_30">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            style="@style/MyTextViewSettingsBold"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="start"
+                            android:text="Calendar Sync"
+                            android:textSize="@dimen/small_text_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="start"
+                            android:textColor="@color/emptyGray"
+                            android:text="View event in your device"
+                            android:textSize="@dimen/extra_small_text_size" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MyTextViewSettingsRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/radius_2"
+                        android:text="On"
+                        android:textSize="@dimen/small_text_size" />
+
+                    <ToggleButton
+                        android:id="@+id/calendar_sync_switch"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:button="@drawable/check"
+                        android:gravity="center"
+                        android:textOff=""
+                        android:textOn="" />
+
+                    <TextView
+                        style="@style/MyTextViewSettingsRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/radius_2"
+                        android:text="Off"
+                        android:textSize="@dimen/small_text_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notify_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_30">
+
+                    <TextView
+                        style="@style/MyTextViewSettingsBold"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="Notifications"
+                        android:textSize="@dimen/small_text_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/MyTextViewSettingsRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/radius_2"
+                        android:text="On"
+                        android:textSize="@dimen/small_text_size" />
+
+                    <ToggleButton
+                        android:id="@+id/notification_switch"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:button="@drawable/check"
+                        android:gravity="center"
+                        android:textOff=""
+                        android:textOn="" />
+
+                    <TextView
+                        style="@style/MyTextViewSettingsRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/radius_2"
+                        android:text="Off"
+                        android:textSize="@dimen/small_text_size" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/uppdate_profile"
+                    style="@style/MyButtonthemeBlue"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:text="UPDATE PROFILE" />
+
+                <Button
+                    android:id="@+id/change_pwd"
+                    style="@style/MyButtonthemeBlue"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:text="CHANGE PASSWORD" />
+
+                <CheckBox
+                    android:id="@+id/remember_me_chck_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:backgroundTint="@color/themeBlue"
+                    android:buttonTint="@color/themeBlue"
+                    android:drawableTint="@color/themeBlue"
+                    android:text="Remember Me"
+                    android:visibility="gone" />
+
+
+                <Button
+                    android:id="@+id/logout_button"
+                    style="@style/MyButtonthemeRed"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:text="LOGOUT" />
+
+                <TextView
+                    android:id="@+id/app_version"
+                    style="@style/MyTextViewSettingsRegular"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:text="Notifications"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-          style="@style/SettingsLayout">
-
-          <TextView
-            style="@style/MyTextViewSettingsBold"
-            android:layout_marginLeft="10dp"
-            android:text="Phone Number : "/>
-
-          <TextView
-            android:id="@+id/user_phone"
-            style="@style/MyTextViewSettingsRegular"/>
-        </LinearLayout>
-
-        <LinearLayout
-          style="@style/SettingsLayout">
-
-          <TextView
-            style="@style/MyTextViewSettingsBold"
-            android:layout_marginLeft="10dp"
-            android:text="Fax : "/>
-
-          <TextView
-            android:id="@+id/user_fax_no"
-            style="@style/MyTextViewSettingsRegular"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-          style="@style/SettingsLayout">
-
-          <TextView
-            style="@style/MyTextViewSettingsBold"
-            android:layout_marginLeft="10dp"
-            android:text="Specialty : "/>
-
-          <TextView
-            android:id="@+id/user_speciality"
-            style="@style/MyTextViewSettingsRegular"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-          style="@style/SettingsLayout">
-
-          <TextView
-            style="@style/MyTextViewSettingsBold"
-            android:layout_marginLeft="10dp"
-            android:text="Sector : "/>
-
-          <TextView
-            android:id="@+id/user_sector"
-            style="@style/MyTextViewSettingsRegular"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-          style="@style/SettingsLayout">
-
-          <TextView
-            style="@style/MyTextViewSettingsBold"
-            android:layout_marginLeft="10dp"
-            android:text="Address : "/>
-
-          <TextView
-            android:id="@+id/user_address"
-            style="@style/MyTextViewSettingsRegular"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-          style="@style/SettingsLayout">
-
-          <TextView
-            style="@style/MyTextViewSettingsBold"
-            android:layout_marginLeft="10dp"
-            android:text="Account Number : "/>
-
-          <TextView
-            android:id="@+id/user_account_no"
-            style="@style/MyTextViewSettingsRegular"/>
-
-        </LinearLayout>
-
-        <View
-          android:layout_marginBottom="@dimen/margin_30"
-          android:layout_marginTop="@dimen/margin_30"
-          android:background="@color/darkerGray"
-          android:layout_width="match_parent"
-          android:layout_height="2dp"/>
-
-        <TextView
-          android:visibility="gone"
-          style="@style/MyTextViewSettingsBold"
-          android:textSize="25sp"
-          android:textStyle="bold"
-          android:text="Select Language"/>
-
-        <LinearLayout
-          android:visibility="gone"
-          android:layout_marginTop="@dimen/margin_10"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-          <TextView
-            android:layout_marginRight="@dimen/margin_10"
-            style="@style/MyTextViewSettingsRegular"
-            android:text="Chinese"/>
-
-          <Switch
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-          <TextView
-            android:layout_marginLeft="@dimen/margin_10"
-            style="@style/MyTextViewSettingsRegular"
-            android:text="English"/>
-        </LinearLayout>
-
-        <TextView
-          android:layout_marginTop="@dimen/margin_20"
-          style="@style/MyTextViewSettingsBold"
-          android:textSize="25sp"
-          android:textStyle="bold"
-          android:text="Notifications"/>
-
-        <LinearLayout
-          android:id="@+id/notify_layout"
-          android:layout_marginTop="@dimen/margin_10"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-          <TextView
-            android:layout_marginRight="@dimen/margin_10"
-            style="@style/MyTextViewSettingsRegular"
-            android:text="On"/>
-
-          <ToggleButton
-            android:id="@+id/notification_switch"
-            android:textOn=""
-            android:textOff=""
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:button="@drawable/check"
-            android:gravity="center"/>
-
-          <TextView
-            android:layout_marginLeft="10dp"
-            style="@style/MyTextViewSettingsRegular"
-            android:text="Off"/>
-
-        </LinearLayout>
-
-        <Button
-          android:layout_marginTop="@dimen/margin_20"
-          android:layout_marginRight="@dimen/margin_30"
-          android:layout_marginLeft="@dimen/margin_30"
-          android:layout_alignParentBottom="true"
-          style="@style/MyButtonthemeBlue"
-          android:id="@+id/uppdate_profile"
-          android:text="UPDATE PROFILE"/>
-
-        <Button
-          android:layout_marginTop="@dimen/margin_20"
-          android:layout_marginRight="@dimen/margin_30"
-          android:layout_marginLeft="@dimen/margin_30"
-          android:layout_alignParentBottom="true"
-          style="@style/MyButtonthemeBlue"
-          android:id="@+id/change_pwd"
-          android:text="CHANGE PASSWORD"/>
-
-        <CheckBox
-          android:visibility="gone"
-          android:id="@+id/remember_me_chck_box"
-          android:drawableTint="@color/themeBlue"
-          android:buttonTint="@color/themeBlue"
-          android:backgroundTint="@color/themeBlue"
-          android:layout_marginTop="@dimen/margin_15"
-          android:text="Remember Me"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"/>
-
-
-        <Button
-          android:layout_marginTop="@dimen/margin_15"
-          android:layout_marginRight="@dimen/margin_30"
-          android:layout_marginLeft="@dimen/margin_30"
-          android:layout_alignParentBottom="true"
-          style="@style/MyButtonthemeRed"
-          android:id="@+id/logout_button"
-          android:text="LOGOUT"/>
-
-        <TextView
-          android:layout_marginTop="@dimen/margin_20"
-          style="@style/MyTextViewSettingsRegular"
-          android:textSize="20sp"
-          android:id="@+id/app_version"
-          android:text="Notifications"/>
-
-      </LinearLayout>
-    </LinearLayout>
-  </ScrollView>
+    </ScrollView>
 </LinearLayout>
