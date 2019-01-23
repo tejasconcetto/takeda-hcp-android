@@ -1,223 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:id="@+id/coordinator_layout"
-  style="@style/MyCoordinatorLayout">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_layout"
+    style="@style/MyCoordinatorLayout">
 
-  <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="vertical">
-
-      <include
-        layout="@layout/toolbar_header"
-        android:id="@+id/headerToolbar"/>
-
-      <ScrollView
-        android:layout_weight="1.1"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
-          android:orientation="vertical"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent">
-
-          <LinearLayout
-            android:id="@+id/main_layout"
-            android:padding="@dimen/margin_10"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <include
-              layout="@layout/logo_layout"/>
+                android:id="@+id/headerToolbar"
+                layout="@layout/toolbar_header" />
 
-            <View
-              android:layout_marginBottom="@dimen/margin_10"
-              android:layout_marginTop="@dimen/margin_10"
-              android:background="@color/darkerGray"
-              android:layout_width="match_parent"
-              android:layout_height="1dp"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/main_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_10">
+
+                        <include layout="@layout/logo_layout" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:layout_marginBottom="@dimen/margin_10"
+                            android:background="@color/darkerGray" />
 
 
-            <RelativeLayout
-              style="@style/SettingsLayout">
+                        <android.support.constraint.ConstraintLayout style="@style/SettingsLayout">
 
-              <LinearLayout
-                android:layout_toLeftOf="@+id/timing_layout"
-                android:orientation="horizontal"
-                android:id="@+id/mobile_layout"
-                android:layout_alignParentLeft="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:id="@+id/mobile_layout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintEnd_toStartOf="@+id/timing_layout"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                  android:layout_height="@dimen/about_us_img"
-                  android:layout_width="@dimen/about_us_img"
-                  android:src="@drawable/contact"
-                  android:layout_marginRight="@dimen/margin_10"/>
+                                <ImageView
+                                    android:layout_width="@dimen/about_us_img"
+                                    android:layout_height="@dimen/about_us_img"
+                                    android:layout_marginRight="@dimen/radius_2"
+                                    android:src="@drawable/contact" />
+
+                                <TextView
+                                    android:id="@+id/company_contact_no"
+                                    style="@style/MyTextViewSettingsRegular"
+                                    android:layout_marginLeft="0dp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/timing_layout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/radius_2"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/mobile_layout"
+                                app:layout_constraintTop_toTopOf="@+id/mobile_layout">
+
+                                <ImageView
+                                    android:layout_width="@dimen/about_us_img"
+                                    android:layout_height="@dimen/about_us_img"
+                                    android:layout_marginRight="@dimen/radius_2"
+                                    android:src="@drawable/timer"
+                                    android:text="Email : " />
+
+                                <TextView
+                                    android:id="@+id/company_timings"
+                                    style="@style/MyTextViewSettingsRegular"
+                                    android:layout_marginLeft="0dp" />
+
+                            </LinearLayout>
+
+                        </android.support.constraint.ConstraintLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:layout_width="@dimen/about_us_img"
+                                android:layout_height="@dimen/about_us_img"
+                                android:layout_marginRight="@dimen/radius_2"
+                                android:src="@drawable/site"
+                                android:text="Email : " />
+
+                            <TextView
+                                android:id="@+id/company_website"
+                                style="@style/MyTextViewSettingsRegular"
+                                android:layout_marginLeft="0dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="@dimen/about_us_img"
+                                android:layout_height="@dimen/about_us_img"
+                                android:layout_marginRight="@dimen/margin_10"
+                                android:src="@drawable/mail" />
+
+                            <TextView
+                                android:id="@+id/company_email"
+                                style="@style/MyTextViewSettingsRegular" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/company_description"
+                            style="@style/MyTextViewSettingsRegular"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/company_address"
+                            style="@style/MyTextViewSettingsRegular"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="@dimen/margin_10" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <FrameLayout
+                android:id="@+id/map_frame"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.takeda.android.activities.AboutUsActivity"
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
                 <TextView
-                  android:id="@+id/company_contact_no"
-                  style="@style/MyTextViewSettingsRegular"/>
+                    android:id="@+id/get_dir_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="15dp"
+                    android:background="@color/red_offers"
+                    android:padding="@dimen/radius_2"
+                    android:text="Get Directions"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/extra_small_text_size"
+                    android:textStyle="bold" />
 
+            </FrameLayout>
 
-              </LinearLayout>
+            <ImageView
+                android:id="@+id/map_frame_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/static_map"
+                android:visibility="gone" />
 
-              <LinearLayout
-                android:id="@+id/timing_layout"
-                android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                  android:layout_height="@dimen/about_us_img"
-                  android:layout_width="@dimen/about_us_img"
-                  android:src="@drawable/timer"
-                  android:layout_marginRight="@dimen/margin_10"
-                  android:text="Email : "/>
-
-                <TextView
-                  android:id="@+id/company_timings"
-                  style="@style/MyTextViewSettingsRegular"/>
-
-              </LinearLayout>
-
-            </RelativeLayout>
-
-            <LinearLayout
-              android:layout_marginTop="@dimen/margin_10"
-              android:layout_gravity="left"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:visibility="visible">
-
-              <ImageView
-                android:layout_height="@dimen/about_us_img"
-                android:layout_width="@dimen/about_us_img"
-                android:src="@drawable/site"
-                android:layout_marginRight="@dimen/margin_10"
-                android:text="Email : "/>
-
-              <TextView
-                android:id="@+id/company_website"
-                style="@style/MyTextViewSettingsRegular"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-              android:layout_marginTop="@dimen/margin_10"
-              android:layout_gravity="left"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:visibility="gone">
-
-              <ImageView
-                android:layout_height="@dimen/about_us_img"
-                android:layout_width="@dimen/about_us_img"
-                android:src="@drawable/mail"
-                android:layout_marginRight="@dimen/margin_10"/>
-
-              <TextView
-                android:id="@+id/company_email"
-                style="@style/MyTextViewSettingsRegular"/>
-            </LinearLayout>
-
-            <TextView
-              android:textStyle="bold"
-              android:layout_gravity="left"
-              android:layout_marginTop="@dimen/margin_10"
-              android:id="@+id/company_description"
-              style="@style/MyTextViewSettingsRegular"/>
-
-            <TextView
-              android:layout_gravity="left"
-              android:layout_marginTop="@dimen/margin_10"
-              android:id="@+id/company_address"
-              style="@style/MyTextViewSettingsRegular"/>
-
-          </LinearLayout>
 
         </LinearLayout>
-      </ScrollView>
-
-      <FrameLayout
-        android:id="@+id/map_frame"
-        android:layout_width="match_parent"
-        android:layout_weight="0.9"
-        android:layout_height="0dp">
-
-        <fragment
-          android:name="com.takeda.android.activities.AboutUsActivity"
-          android:id="@+id/map"
-          class="com.google.android.gms.maps.SupportMapFragment"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"/>
-
-        <TextView
-          android:background="@color/red_offers"
-          android:layout_margin="15dp"
-          android:padding="@dimen/margin_10"
-          android:textSize="15sp"
-          android:textStyle="bold"
-          android:id="@+id/get_dir_btn"
-          android:textColor="@color/white"
-          android:text="Get Directions"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="right"/>
-
-      </FrameLayout>
-
-      <ImageView
-        android:visibility="gone"
-        android:src="@drawable/static_map"
-        android:id="@+id/map_frame_image"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp"/>
 
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tandc_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="left"
+                android:layout_margin="0dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:gravity="center"
+                android:padding="@dimen/margin_15"
+                android:text="Terms and Conditions"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:src="@drawable/arrow_right" />
+        </LinearLayout>
 
 
-    <LinearLayout
-      android:gravity="center"
-      android:background="@color/black"
-      android:orientation="horizontal"
-      android:id="@+id/tandc_layout"
-      android:layout_alignParentBottom="true"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-
-      <TextView
-        android:layout_margin="0dp"
-        android:padding="@dimen/margin_15"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:text="Terms and Conditions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="left"
-        android:layout_marginTop="@dimen/margin_20"/>
-
-      <ImageView
-        android:layout_marginLeft="@dimen/margin_15"
-        android:src="@drawable/arrow_right"
-        android:layout_width="20dp"
-        android:layout_height="20dp"/>
-    </LinearLayout>
-
-
-  </RelativeLayout>
+    </RelativeLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

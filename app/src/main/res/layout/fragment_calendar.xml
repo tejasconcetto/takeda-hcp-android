@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:padding="0dp"
             app:mcv_firstDayOfWeek="sunday"
-            app:mcv_selectionColor="@color/red_offers"
+            app:mcv_selectionColor="@color/white"
             app:mcv_showOtherDates="all"
             app:mcv_tileWidth="match_parent" />
 

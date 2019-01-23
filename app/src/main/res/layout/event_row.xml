@@ -34,6 +34,7 @@
             style="@style/MyTextViewCOrder"
             android:layout_toRightOf="@+id/event_date"
             android:maxLines="3"
+            android:minHeight="@dimen/height_30"
             android:singleLine="false"
             android:text="Event Title"
             android:textColor="@color/calendar_title"
@@ -65,7 +66,7 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/event_date"
+            android:layout_below="@+id/event_title_not_selected"
             android:layout_marginTop="@dimen/margin_10">
 
             <TextView

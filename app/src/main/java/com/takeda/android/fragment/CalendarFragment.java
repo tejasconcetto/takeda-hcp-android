@@ -345,13 +345,13 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
             public void decorate(DayViewFacade view) {
                 System.out.println("selectedDate========>" + selectedDate);
                 System.out.println("favourite_events========>" + favourite_events);
-                if (favourite_events != null && favourite_events.size() > 0 && favourite_events.contains(selectedDate)) {
+                /*if (favourite_events != null && favourite_events.size() > 0 && favourite_events.contains(selectedDate)) {
                     System.out.println("true=====");
                     view.setBackgroundDrawable(AppDelegate.getDrawable(mContext, R.drawable.circle_counter));
-                } else {
-                    view.setBackgroundDrawable(
-                            AppDelegate.getDrawable(mContext, R.drawable.circle_counter_green));
-                }
+                } else {*/
+                view.setBackgroundDrawable(
+                        AppDelegate.getDrawable(mContext, R.drawable.circle_counter_green));
+                // }
                 view.addSpan(new ForegroundColorSpan(Color.WHITE));
             }
         });
@@ -359,9 +359,12 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         calendarView.addDecorator(new DayViewDecorator() {
             @Override
             public boolean shouldDecorate(CalendarDay day) {
-                return day.equals(CalendarDay.from(Calendar.getInstance().get(Calendar.YEAR),
+                return ((selectedDate != null && day.equals(CalendarDay.from(selectedDate.getCalendar().get(Calendar.YEAR),
+                        selectedDate.getCalendar().get(Calendar.MONTH),
+                        selectedDate.getCalendar().get(Calendar.DATE))))
+                        || (day.equals(CalendarDay.from(Calendar.getInstance().get(Calendar.YEAR),
                         Calendar.getInstance().get(Calendar.MONTH),
-                        Calendar.getInstance().get(Calendar.DATE)));
+                        Calendar.getInstance().get(Calendar.DATE)))));
             }
 
             @Override
@@ -537,7 +540,7 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
                                                             pushAppointmentsToCalender(eventDateWise.get(pos).title,
                                                                     eventDateWise.get(pos).description,
                                                                     eventDateWise.get(pos).Address,
-                                                                    eventDateWise.get(pos).calendarUrl,
+                                                                    eventDateWise.get(pos).click_url,
                                                                     eventDateWise.get(pos).id,
                                                                     isAllDay,
                                                                     0,
@@ -849,7 +852,7 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         // our mobile for primary
         // its 1
         eventValues.put(CalendarContract.Events.TITLE, title);
-        eventValues.put(CalendarContract.Events.DESCRIPTION, addInfo);
+        eventValues.put(CalendarContract.Events.DESCRIPTION, addInfo + "\n" + url);
         eventValues.put(CalendarContract.Events.EVENT_LOCATION, place);
         eventValues.put(CalendarContract.Events.ALL_DAY, isAllDay);
         eventValues.put(CalendarContract.Events.DTSTART, startDate);

@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:bottom="1dp"
+      android:left="1dp"
+      android:right="1dp"
+      android:top="1dp">
+
+    <!-- Insert your shape here: -->
+    <shape xmlns:android="http://schemas.android.com/apk/res/android"
+        android:thickness="0dp"
+        android:shape="oval">
+      <solid android:color="@color/favourite_event_bg" />
+    </shape>
 
 
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-  android:thickness="0dp"
-  android:shape="oval">
-  <solid android:color="@color/favourite_event_bg"
-    />
-</shape>
+  </item>
+</layer-list>
+
 
   <!--<inset xmlns:android="http://schemas.android.com/apk/res/android"
       android:insetLeft="8dp"
