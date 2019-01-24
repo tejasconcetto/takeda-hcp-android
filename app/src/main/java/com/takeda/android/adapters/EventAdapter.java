@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.text.util.Linkify;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -150,8 +151,16 @@ public class EventAdapter extends BaseAdapter {
             holder.tv_NotSelectedTitle.setText(eventListModel.title);
             holder.tv_Event_Description_not_selected.setText(eventListModel.description);
             holder.tv_Event_Description_selected.setText(eventListModel.description);
-            Linkify.addLinks(holder.tv_Event_Description_not_selected, Linkify.PHONE_NUMBERS);
-            Linkify.addLinks(holder.tv_Event_Description_selected, Linkify.PHONE_NUMBERS);
+            holder.tv_Organiser_not_selected.setText(eventListModel.organiser_name);
+            holder.tv_Organiser_selected.setText(eventListModel.organiser_name);
+            holder.tv_period_selected.setText(eventListModel.period);
+            holder.tv_period_not_selected.setText(eventListModel.period);
+            Linkify.addLinks(holder.tv_Event_Description_not_selected, Patterns.PHONE, "tel:", Linkify.sPhoneNumberMatchFilter,
+                    Linkify.sPhoneNumberTransformFilter);
+            Linkify.addLinks(holder.tv_Event_Description_selected, Patterns.PHONE, "tel:", Linkify.sPhoneNumberMatchFilter,
+                    Linkify.sPhoneNumberTransformFilter);
+           /* Linkify.addLinks(holder.tv_Event_Description_not_selected, Linkify.PHONE_NUMBERS);
+            Linkify.addLinks(holder.tv_Event_Description_selected, Linkify.PHONE_NUMBERS);*/
             holder.tv_Event_Description_not_selected.setLinkTextColor(ContextCompat.getColor(activity, R.color.link_color));
             holder.tv_Event_Description_selected.setLinkTextColor(ContextCompat.getColor(activity, R.color.link_color));
             System.out.println("eventListModel.id========>" + eventListModel.id);

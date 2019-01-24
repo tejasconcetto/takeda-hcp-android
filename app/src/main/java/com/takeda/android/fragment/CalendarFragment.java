@@ -425,8 +425,10 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+
                                     eventAdapter.notifyDataSetChanged();
                                     addressList.invalidate();
+                                    addressList.smoothScrollToPosition(0);
                                 }
                             });
                         } else {
@@ -434,6 +436,8 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
                             eventAdapter = new EventAdapter((BaseActivity) getActivity(), eventDateWise,
                                     CalendarFragment.this);
                             addressList.setAdapter(eventAdapter);
+                            addressList.smoothScrollToPosition(0);
+
                         }
                     } else {
                         addressList.setVisibility(View.GONE);

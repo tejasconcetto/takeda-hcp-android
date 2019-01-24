@@ -51,6 +51,7 @@ public class SplOffersFragment extends BaseFragment {
     ArrayList<BannerModel.BannerDataModel> bannersList = new ArrayList<>();
     SessionManager session;
     AlertDialog alert1;
+    ImageView leftArrow, rightArrow;
     private ProgressDialog dialog;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
@@ -74,6 +75,9 @@ public class SplOffersFragment extends BaseFragment {
 
         tabLayout = mView.findViewById(R.id.tabs);
         viewPager = mView.findViewById(R.id.viewpager);
+        leftArrow = mView.findViewById(R.id.leftArrow);
+        rightArrow = mView.findViewById(R.id.rightArrow);
+
         tabHost = new TabHost(getActivity(), null);
 
         fetchBanners();
@@ -83,7 +87,57 @@ public class SplOffersFragment extends BaseFragment {
 
         session.showLogs("PagerPosition", "Position : " + AppDelegate.pagerPosition);
         viewPager.setCurrentItem(0);
+        setPageChangeListener();
+        setOnClickListener();
         return mView;
+    }
+
+    private void setOnClickListener() {
+        leftArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (viewPager.getCurrentItem() != 0) {
+                    viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
+                }
+            }
+        });
+
+        rightArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (viewPager.getCurrentItem() != viewPagerAdapter.getCount() - 1) {
+                    viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+                }
+            }
+        });
+    }
+
+    private void setPageChangeListener() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if (position == 0) {
+                    leftArrow.setVisibility(View.INVISIBLE);
+                    rightArrow.setVisibility(View.VISIBLE);
+                } else if (position == viewPagerAdapter.getCount() - 1) {
+                    rightArrow.setVisibility(View.INVISIBLE);
+                    leftArrow.setVisibility(View.VISIBLE);
+                } else {
+                    leftArrow.setVisibility(View.VISIBLE);
+                    rightArrow.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override

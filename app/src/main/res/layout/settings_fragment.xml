@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:gravity="center"
                     android:textColor="@android:color/black"
-                    android:textSize="28sp" />
+                    android:textSize="25sp" />
 
                 <LinearLayout style="@style/SettingsLayout">
 
@@ -48,7 +48,7 @@
                     <TextView
                         style="@style/MyTextViewSettingsBold"
                         android:layout_marginLeft="10dp"
-                        android:text="Phone Number : " />
+                        android:text="Mobile : " />
 
                     <TextView
                         android:id="@+id/user_phone"
@@ -75,7 +75,7 @@
                     <TextView
                         style="@style/MyTextViewSettingsBold"
                         android:layout_marginLeft="10dp"
-                        android:text="Specialty : " />
+                        android:text="Speciality : " />
 
                     <TextView
                         android:id="@+id/user_speciality"
@@ -285,7 +285,7 @@
                     style="@style/MyButtonthemeBlue"
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="@dimen/margin_30"
-                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_15"
                     android:layout_marginRight="@dimen/margin_30"
                     android:text="CHANGE PASSWORD" />
 
@@ -293,7 +293,7 @@
                     android:id="@+id/remember_me_chck_box"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/margin_20"
                     android:backgroundTint="@color/themeBlue"
                     android:buttonTint="@color/themeBlue"
                     android:drawableTint="@color/themeBlue"
