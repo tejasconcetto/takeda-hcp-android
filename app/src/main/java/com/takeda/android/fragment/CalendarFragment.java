@@ -65,6 +65,7 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 import static com.takeda.android.Utilities.convertTimeStampToLong;
+import static com.takeda.android.Utilities.getMonth;
 import static com.takeda.android.Utilities.openDialogWithOption;
 
 //
@@ -98,6 +99,11 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
     CalendarDay selectedDate;
 
     OnMonthChangedListener onMonthChndListener = null;
+    ImageView ivPrevousMonth, ivNextMonth;
+    TextView tvCurrentMonth, tvPreviousMonth, tvNextMonth;
+    String currentMonth = "";
+    String previousMonth = "";
+    String nextMonth = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -118,12 +124,39 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         addressList = mView.findViewById(R.id.events_list);
         noEventTextView = mView.findViewById(R.id.noEventTextView);
         calendarView = mView.findViewById(R.id.calendarView);
+        ivNextMonth = mView.findViewById(R.id.nextMonth);
+        ivPrevousMonth = mView.findViewById(R.id.previousMonth);
+        tvCurrentMonth = mView.findViewById(R.id.monthLabel);
+        tvNextMonth = mView.findViewById(R.id.nextMonthName);
+        tvPreviousMonth = mView.findViewById(R.id.previousMonthName);
+        ViewGroup vg = (ViewGroup) calendarView.getChildAt(0);
+        vg.setVisibility(View.GONE);
 
+        setCalendarHeader();
         setHandler();
 
         onMonthChndListener = new OnMonthChangedListener() {
             @Override
             public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
+                int month = date.getMonth();
+               /* if(date.getMonth()==0){
+                    month = date.getMonth()+1;
+                }else{
+                    month = date.getMonth();
+                }*/
+                currentMonth = getMonth(month) + " " + date.getYear();
+                if (month - 1 < 0)
+                    previousMonth = getMonth(11).substring(0, 3);
+                else
+                    previousMonth = getMonth(month - 1).substring(0, 3);
+
+                if (month + 1 > 11)
+                    nextMonth = getMonth(0).substring(0, 3);
+                else
+                    nextMonth = getMonth(month + 1).substring(0, 3);
+                tvNextMonth.setText(nextMonth);
+                tvPreviousMonth.setText(previousMonth);
+                tvCurrentMonth.setText(currentMonth);
                 loadEvents(date.getMonth() + 1, date.getYear());
                 if (events == null) {
                     events = new ArrayList<>();
@@ -160,7 +193,7 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         });
 
         ViewGroup.LayoutParams params1 = calendarView.getLayoutParams();
-        Double height1 = layoutsize() * 0.8;
+        Double height1 = layoutsize() * 0.7;
 //        Integer width1 = layoutsize();
         params1.height = height1.intValue();
 //        params1.width = width1;
@@ -172,7 +205,19 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         if (onMonthChndListener != null) {
             calendarView.setOnMonthChangedListener(onMonthChndListener);
         }
+        currentMonth = getMonth(cal.get(Calendar.MONTH)) + " " + cal.get(Calendar.YEAR);
+        tvCurrentMonth.setText(currentMonth);
+        if (cal.get(Calendar.MONTH) - 1 < 0)
+            previousMonth = getMonth(11).substring(0, 3);
+        else
+            previousMonth = getMonth(cal.get(Calendar.MONTH) - 1).substring(0, 3);
 
+        if (cal.get(Calendar.MONTH) + 1 > 11)
+            nextMonth = getMonth(0).substring(0, 3);
+        else
+            nextMonth = getMonth(cal.get(Calendar.MONTH) + 1).substring(0, 3);
+        tvNextMonth.setText(nextMonth);
+        tvPreviousMonth.setText(previousMonth);
         if (getArguments() != null) {
             showLogs("BundleStatus", "Exist - " + String.valueOf(getArguments()));
             Bundle bundle = getArguments();
@@ -190,6 +235,14 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
             loadEvents(cal.get(Calendar.MONTH) + 1, cal.get(Calendar.YEAR));
         }
         return mView;
+    }
+
+    private void setCalendarHeader() {
+
+        ivNextMonth.setOnClickListener(view -> calendarView.goToNext());
+
+        ivPrevousMonth.setOnClickListener(view -> calendarView.goToPrevious());
+
     }
 
     @Override
@@ -428,7 +481,8 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
 
                                     eventAdapter.notifyDataSetChanged();
                                     addressList.invalidate();
-                                    addressList.smoothScrollToPosition(0);
+                                    //addressList.smoothScrollToPosition(0);
+                                    addressList.setSelectionAfterHeaderView();
                                 }
                             });
                         } else {
@@ -436,7 +490,8 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
                             eventAdapter = new EventAdapter((BaseActivity) getActivity(), eventDateWise,
                                     CalendarFragment.this);
                             addressList.setAdapter(eventAdapter);
-                            addressList.smoothScrollToPosition(0);
+                            //addressList.smoothScrollToPosition(0);
+                            addressList.setSelectionAfterHeaderView();
 
                         }
                     } else {

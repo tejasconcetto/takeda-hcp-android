@@ -45,11 +45,11 @@ public class SessionManager {
   public static final String KEY_PURCHASE_HISTORY_FLAG = "purchase_history_flag";
   public static final String KEY_CALENDAR_SYNC_FLAG = "calendar_sync";
   public static String BASE_URL = "http://mentem.in/takeda_backend/api/Dummy";
-  public static String BASE_URL_AWS = "https://hcp.takeda-hk.com/api/";
+  public static String BASE_URL_AWS = "http://13.229.235.139/api/";
   //UAT URL -> "http://13.229.235.139/api/";
   // "http://192.168.123.107/takeda-hcp-Admin/api/";
   // "http://ec2-52-77-230-85.ap-southeast-1.compute.amazonaws.com/api/";
-  // live URL -> public static String BASE_URL_AWS = "https://hcp.takeda-hk.com/api/";
+  //live URL -> public static String BASE_URL_AWS = "https://hcp.takeda-hk.com/api/";
   public static String BASE_URL_ALTUS = "http://altustendo.com/takeda_backend/api/Dummy";
 
   // Constructor

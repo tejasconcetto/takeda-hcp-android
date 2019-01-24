@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -134,5 +135,9 @@ public class Utilities {
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, text);
         activity.startActivity(Intent.createChooser(intent, "Share"));
+    }
+
+    public static String getMonth(int month) {
+        return new DateFormatSymbols().getMonths()[month];
     }
 }
