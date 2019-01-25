@@ -3,6 +3,7 @@ package com.takeda.android;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -139,5 +140,25 @@ public class Utilities {
 
     public static String getMonth(int month) {
         return new DateFormatSymbols().getMonths()[month];
+    }
+
+    public static String convertDateFormat(String myDate, String inputFormat, String outputFormat) {
+        if (!myDate.equals("")) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat(outputFormat, Locale.ENGLISH);
+            SimpleDateFormat sdf = new SimpleDateFormat(inputFormat, Locale.getDefault());
+            Date date = null;
+            try {
+                date = sdf.parse(myDate);
+                return dateFormat.format(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                return myDate;
+            }
+        } else
+            return myDate;
+    }
+
+    public static String convertLongToDate(long dateInLong, String outputFormat) {
+        return DateFormat.format(outputFormat, new Date(dateInLong)).toString();
     }
 }

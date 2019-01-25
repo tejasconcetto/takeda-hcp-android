@@ -1,6 +1,7 @@
 package com.takeda.android.model;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -52,6 +53,9 @@ public class EnquiryModel implements Serializable {
 
     @SerializedName("sales_image")
     public String salesImage;
+
+      @SerializedName("product_name")
+      public String productName;
   }
 
 

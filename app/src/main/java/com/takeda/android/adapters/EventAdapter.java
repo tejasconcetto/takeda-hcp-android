@@ -41,6 +41,8 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+import static com.takeda.android.Utilities.convertLongToDate;
+import static com.takeda.android.Utilities.convertTimeStampToLong;
 import static com.takeda.android.Utilities.openDialogWithOption;
 import static com.takeda.android.Utilities.shareOnSocialMedia;
 
@@ -149,8 +151,9 @@ public class EventAdapter extends BaseAdapter {
             holder.tv_NotSelectedDate.setText(eventListModel.event_date);
             holder.tv_SelectedTitle.setText(eventListModel.title);
             holder.tv_NotSelectedTitle.setText(eventListModel.title);
-            holder.tv_Event_Description_not_selected.setText(eventListModel.description);
-            holder.tv_Event_Description_selected.setText(eventListModel.description);
+            String desc = removeDate(eventListModel.description, eventListModel.startDate);
+            holder.tv_Event_Description_not_selected.setText(desc);
+            holder.tv_Event_Description_selected.setText(desc);
             holder.tv_Organiser_not_selected.setText(eventListModel.organiser_name);
             holder.tv_Organiser_selected.setText(eventListModel.organiser_name);
             holder.tv_period_selected.setText(eventListModel.period);
@@ -456,4 +459,30 @@ public class EventAdapter extends BaseAdapter {
         public ImageView img_FavSelected, img_FavNotSelected, calendarShare, calendarFav, calendarMoreInfo;
     }
 
+    /*private String removeDate(String desc,String date){
+        String weekDay = convertLongToDate(convertTimeStampToLong(date,null),"EEE");
+        String convertedDate = convertLongToDate(convertTimeStampToLong(date,null),"dd MMM yyyy");
+        String formattedString = convertedDate +" ("+weekDay+")";
+        String formattedStringWithNewLine = convertedDate +"\r\n("+weekDay+")";
+        if(desc.contains(formattedString) || desc.contains(formattedStringWithNewLine)){
+            return desc.replace(formattedString,"");
+        }else
+            return desc;
+    }*/
+
+    private String removeDate(String desc, String date) {
+        try {
+            String year = convertLongToDate(convertTimeStampToLong(date, null), "yyyy");
+            String beforeYear = String.valueOf(Integer.parseInt(year) - 1);
+            String afterYear = String.valueOf(Integer.parseInt(year) + 1);
+
+            String updatedDesc[] = desc.split("\r\n");
+            if (updatedDesc[0].contains(year) || updatedDesc[0].contains(beforeYear) || updatedDesc[0].contains(afterYear))
+                return desc.replace(updatedDesc[0], "");
+            else
+                return desc;
+        } catch (Exception e) {
+            return desc;
+        }
+    }
 }

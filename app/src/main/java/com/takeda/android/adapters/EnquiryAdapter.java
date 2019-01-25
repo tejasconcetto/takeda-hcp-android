@@ -63,6 +63,7 @@ public class EnquiryAdapter extends BaseAdapter {
         public TextView tv_contact_detail;
         public LinearLayout emailLayout, mobileLayout;
         public CircleImageView salesPersonImage;
+        public TextView tvProductName;
     }
 
     @Override
@@ -80,6 +81,7 @@ public class EnquiryAdapter extends BaseAdapter {
             holder.tv_email_id = vi.findViewById(R.id.tv_email_enquiry);
             holder.tv_contact_detail = vi.findViewById(R.id.tv_mobile_enquiry);
             holder.tv_sales_name = vi.findViewById(R.id.sales_name_tv);
+            holder.tvProductName = vi.findViewById(R.id.productName);
             holder.emailLayout = vi.findViewById(R.id.email_details_layout);
             holder.mobileLayout = vi.findViewById(R.id.call_details_layout);
             holder.salesPersonImage = vi.findViewById(R.id.sales_person_image);
@@ -95,7 +97,9 @@ public class EnquiryAdapter extends BaseAdapter {
             holder.tv_email_id.setText("" + enquiryEntity.enquiry_email);
             holder.tv_contact_detail.setText(enquiryEntity.enquiry_mobile);
             holder.tv_sales_name
-                    .setText("" + enquiryEntity.sales_name + " (" + enquiryEntity.sales_title + ")");
+                    .setText("" + enquiryEntity.sales_name);
+            holder.tvProductName
+                    .setText(enquiryEntity.productName);
 
             holder.emailLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -108,6 +112,13 @@ public class EnquiryAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     mPrdClick.OnCallClick(position);
+                }
+            });
+
+            holder.tvProductName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mPrdClick.OnProductNameClick(position);
                 }
             });
 

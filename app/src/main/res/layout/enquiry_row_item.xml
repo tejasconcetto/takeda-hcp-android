@@ -35,7 +35,7 @@
 
     <LinearLayout
       android:id="@+id/user_layout"
-      android:layout_width="wrap_content"
+        android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginStart="10dp"
       android:layout_toRightOf="@+id/sales_person_image"
@@ -48,6 +48,13 @@
         android:textStyle="bold"
         android:text="Akshay Bissa"
         android:textSize="18sp"/>
+
+      <TextView
+          android:id="@+id/productName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/black"
+          android:textSize="@dimen/small_text_size" />
 
       <LinearLayout
         android:layout_width="wrap_content"

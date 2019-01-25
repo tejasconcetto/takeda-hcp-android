@@ -9,4 +9,6 @@ public interface OnEnquiryClick {
 
   void OnCallClick(int pos);
 
+  void OnProductNameClick(int pos);
+
 }

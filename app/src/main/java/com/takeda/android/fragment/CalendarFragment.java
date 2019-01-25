@@ -218,6 +218,7 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
             nextMonth = getMonth(cal.get(Calendar.MONTH) + 1).substring(0, 3);
         tvNextMonth.setText(nextMonth);
         tvPreviousMonth.setText(previousMonth);
+        selectedDate = CalendarDay.today();
         if (getArguments() != null) {
             showLogs("BundleStatus", "Exist - " + String.valueOf(getArguments()));
             Bundle bundle = getArguments();
@@ -304,7 +305,6 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
                                             eventsArrDataModel = resultArr.get(i);
                                             eventsArrDataModel.calViewDate = date;
                                             eventsArrDataModel.event_date = String.valueOf(date.getDay());
-
                                             events.add(eventsArrDataModel);
 
                                             dates.add(date);
@@ -412,12 +412,12 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         calendarView.addDecorator(new DayViewDecorator() {
             @Override
             public boolean shouldDecorate(CalendarDay day) {
-                return ((selectedDate != null && day.equals(CalendarDay.from(selectedDate.getCalendar().get(Calendar.YEAR),
+                return (selectedDate != null && day.equals(CalendarDay.from(selectedDate.getCalendar().get(Calendar.YEAR),
                         selectedDate.getCalendar().get(Calendar.MONTH),
-                        selectedDate.getCalendar().get(Calendar.DATE))))
-                        || (day.equals(CalendarDay.from(Calendar.getInstance().get(Calendar.YEAR),
+                        selectedDate.getCalendar().get(Calendar.DATE))));
+                        /*|| (day.equals(CalendarDay.from(Calendar.getInstance().get(Calendar.YEAR),
                         Calendar.getInstance().get(Calendar.MONTH),
-                        Calendar.getInstance().get(Calendar.DATE)))));
+                        Calendar.getInstance().get(Calendar.DATE)))));*/
             }
 
             @Override

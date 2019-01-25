@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.skk.lib.BaseClasses.BaseActivity;
 import com.skk.lib.BaseClasses.BaseFragment;
 import com.skk.lib.Interfaces.OnEnquiryClick;
@@ -27,6 +28,7 @@ import com.takeda.android.R;
 import com.takeda.android.activities.MiscActivity;
 import com.takeda.android.adapters.ProductAdapter;
 import com.takeda.android.model.ProductModel;
+
 import java.util.ArrayList;
 
 public class ProductListFragment extends BaseFragment implements OnEnquiryClick,
@@ -335,6 +337,11 @@ public class ProductListFragment extends BaseFragment implements OnEnquiryClick,
   @Override
   public void OnCallClick(int pos) {
     openDialog("call", pos);
+  }
+
+  @Override
+  public void OnProductNameClick(int pos) {
+
   }
 
   void openDialog(final String callType, final int index) {
