@@ -129,9 +129,12 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         tvCurrentMonth = mView.findViewById(R.id.monthLabel);
         tvNextMonth = mView.findViewById(R.id.nextMonthName);
         tvPreviousMonth = mView.findViewById(R.id.previousMonthName);
-        ViewGroup vg = (ViewGroup) calendarView.getChildAt(0);
-        vg.setVisibility(View.GONE);
-
+        try {
+            ViewGroup vg = (ViewGroup) calendarView.getChildAt(0);
+            vg.setVisibility(View.GONE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         setCalendarHeader();
         setHandler();
 
@@ -144,6 +147,17 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
                 }else{
                     month = date.getMonth();
                 }*/
+                if (dates == null) {
+                    dates = new HashSet<>();
+                }
+
+                if (takeda_events == null) {
+                    takeda_events = new HashSet<CalendarDay>();
+                }
+
+                if (favourite_events == null) {
+                    favourite_events = new HashSet<CalendarDay>();
+                }
                 currentMonth = getMonth(month) + " " + date.getYear();
                 if (month - 1 < 0)
                     previousMonth = getMonth(11).substring(0, 3);
@@ -255,6 +269,17 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
 
         try {
             calendarView.removeDecorators();
+            if (dates == null) {
+                dates = new HashSet<>();
+            }
+
+            if (takeda_events == null) {
+                takeda_events = new HashSet<CalendarDay>();
+            }
+
+            if (favourite_events == null) {
+                favourite_events = new HashSet<CalendarDay>();
+            }
 
             if (dialog != null) {
                 dialog.show();
@@ -279,18 +304,6 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
                                     resultArr = eventModal.response.data.eventsData;
 
 //                                    JSONArray eventsArray = response.getJSONObject(Params.response_success_data).getJSONArray("events");
-
-                                    if (dates == null) {
-                                        dates = new HashSet<>();
-                                    }
-
-                                    if (takeda_events == null) {
-                                        takeda_events = new HashSet<CalendarDay>();
-                                    }
-
-                                    if (favourite_events == null) {
-                                        favourite_events = new HashSet<CalendarDay>();
-                                    }
 
                                     dates.clear();
                                     takeda_events.clear();
@@ -335,6 +348,7 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
 
 
                             } else {
+                                addDecorators();
                                 msgAlertDialog("Error", eventModal.response.statusMessage);
                             }
 
@@ -365,6 +379,7 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
             @Override
             public boolean shouldDecorate(CalendarDay day) {
                 return (dates.contains(day));
+
             }
 
             @Override
@@ -391,6 +406,7 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         calendarView.addDecorator(new DayViewDecorator() {
             @Override
             public boolean shouldDecorate(CalendarDay day) {
+
                 return (favourite_events.contains(day));
             }
 

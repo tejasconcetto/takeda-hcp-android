@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.skk.lib.BaseClasses.BaseActivity;
 import com.skk.lib.BaseClasses.BaseFragment;
 import com.skk.lib.utils.SessionManager;
@@ -34,9 +35,12 @@ import com.takeda.android.model.PastRecordModel;
 import com.takeda.android.model.PastRecordModel.PurchaseArrDataModel;
 import com.takeda.android.rest.ApiInterface;
 import com.takeda.android.rest.RestAdapterService;
-import java.util.ArrayList;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -501,7 +505,7 @@ public class PastRecordFragment extends BaseFragment implements View.OnClickList
 
 
                 } else {
-                  msgAlertDialog("Error", purchaseModel.response.statusMessage);
+                    //msgAlertDialog("Error", purchaseModel.response.statusMessage);
                 }
 
                 if (dialog.isShowing()) {
