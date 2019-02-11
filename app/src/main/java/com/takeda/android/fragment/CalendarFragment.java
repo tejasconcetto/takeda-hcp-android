@@ -159,15 +159,33 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
                     favourite_events = new HashSet<CalendarDay>();
                 }
                 currentMonth = getMonth(month) + " " + date.getYear();
-                if (month - 1 < 0)
-                    previousMonth = getMonth(11).substring(0, 3);
-                else
-                    previousMonth = getMonth(month - 1).substring(0, 3);
 
-                if (month + 1 > 11)
+                //Condition for Other Language support in Calendar
+
+                if (month - 1 < 0
+                        && getMonth(11).length() >= 3) {
+                    previousMonth = getMonth(11).substring(0, 3);
+                } else if (month - 1 < 0) {
+                    previousMonth = getMonth(11);
+                } else if (getMonth(month - 1).length() >= 3) {
+                    previousMonth = getMonth(month - 1).substring(0, 3);
+                } else {
+                    previousMonth = getMonth(month - 1);
+                }
+
+
+                //Condition for Other Language support in Calendar
+                if (month + 1 > 11
+                        && getMonth(0).length() >= 3)
                     nextMonth = getMonth(0).substring(0, 3);
-                else
+                else if (month + 1 > 11) {
+                    nextMonth = getMonth(0);
+                } else if (getMonth(month + 1).length() >= 3)
                     nextMonth = getMonth(month + 1).substring(0, 3);
+                else
+                    nextMonth = getMonth(month + 1);
+
+
                 tvNextMonth.setText(nextMonth);
                 tvPreviousMonth.setText(previousMonth);
                 tvCurrentMonth.setText(currentMonth);
@@ -221,15 +239,32 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
         }
         currentMonth = getMonth(cal.get(Calendar.MONTH)) + " " + cal.get(Calendar.YEAR);
         tvCurrentMonth.setText(currentMonth);
-        if (cal.get(Calendar.MONTH) - 1 < 0)
-            previousMonth = getMonth(11).substring(0, 3);
-        else
-            previousMonth = getMonth(cal.get(Calendar.MONTH) - 1).substring(0, 3);
 
-        if (cal.get(Calendar.MONTH) + 1 > 11)
+        //Condition for Other Language support in Calendar
+        if (cal.get(Calendar.MONTH) - 1 < 0
+                && getMonth(11).length() >= 3)
+            previousMonth = getMonth(11).substring(0, 3);
+        else if (cal.get(Calendar.MONTH) - 1 < 0) {
+            previousMonth = getMonth(11);
+        } else if (getMonth(cal.get(Calendar.MONTH) - 1).length() >= 3)
+            previousMonth = getMonth(cal.get(Calendar.MONTH) - 1).substring(0, 3);
+        else {
+            previousMonth = getMonth(cal.get(Calendar.MONTH) - 1);
+        }
+
+        //Condition for Other Language support in Calendar
+        if (cal.get(Calendar.MONTH) + 1 > 11
+                && getMonth(0).length() >= 3)
             nextMonth = getMonth(0).substring(0, 3);
-        else
+        else if (cal.get(Calendar.MONTH) + 1 > 11) {
+            nextMonth = getMonth(0);
+        } else if (getMonth(cal.get(Calendar.MONTH) + 1).length() >= 3) {
             nextMonth = getMonth(cal.get(Calendar.MONTH) + 1).substring(0, 3);
+        } else {
+            nextMonth = getMonth(cal.get(Calendar.MONTH) + 1);
+        }
+
+
         tvNextMonth.setText(nextMonth);
         tvPreviousMonth.setText(previousMonth);
         selectedDate = CalendarDay.today();
@@ -348,8 +383,9 @@ public class CalendarFragment extends BaseFragment implements OnBookMarkClick {
 
 
                             } else {
+                                mHandler.sendEmptyMessage(1);
                                 addDecorators();
-                                msgAlertDialog("Error", eventModal.response.statusMessage);
+                                //msgAlertDialog("Error", eventModal.response.statusMessage);
                             }
 
 
