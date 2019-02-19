@@ -161,4 +161,17 @@ public class Utilities {
     public static String convertLongToDate(long dateInLong, String outputFormat) {
         return DateFormat.format(outputFormat, new Date(dateInLong)).toString();
     }
+
+    public static Date getCurrentDate() {
+        return Calendar.getInstance().getTime();
+    }
+
+    public static boolean getMinutesDifferent(Date date2) {
+        Date date1 = getCurrentDate();
+        long diff = date1.getTime() - date2.getTime();
+        long seconds = diff / 1000;
+        long minutes = seconds / 60;
+        Log.e("minutes", String.valueOf(minutes));
+        return minutes <= 30;
+    }
 }

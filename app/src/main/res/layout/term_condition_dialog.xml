@@ -1,102 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:padding="5dp"
-  android:orientation="vertical"
-  android:layout_gravity="center_vertical|center_horizontal"
-  android:layout_margin="@dimen/margin_20"
-  android:background="@color/white">
-
-
-  <LinearLayout
-    android:layout_marginTop="5dp"
-    android:id="@+id/email_details_layout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true">
-
-    <ImageView
-      android:id="@+id/dialogIcon"
-      android:layout_height="18dp"
-      android:layout_width="@dimen/margin_20"
-      android:layout_gravity="center_vertical"
-      android:layout_marginRight="@dimen/margin_10"
-      android:layout_alignParentRight="true"
-      android:layout_centerVertical="true"
-      android:src="@drawable/icn_mobile"/>
-
-    <TextView
-      android:gravity="left"
-      android:layout_gravity="left"
-      android:id="@+id/dialog_title"
-      android:textSize="18sp"
-      android:textColor="@color/black"
-      android:text="Call Us Now"
-      style="@style/MyTextViewCOrderBold"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"/>
-
-  </LinearLayout>
-
-  <TextView
-    android:gravity="left"
-    android:layout_gravity="left"
-    android:layout_marginTop="5dp"
-    android:textColor="@color/black"
-    android:text="Call Us Now"
-    style="@style/MyTextViewtheme"
-    android:id="@+id/contactMsg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/email_details_layout"
-    android:layout_above="@+id/buttonLayout"
-    android:scrollbars="vertical"
-    android:maxLines="500"/>
-
-  <LinearLayout
-    android:layout_marginTop="@dimen/margin_15"
-    android:gravity="center"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:layout_margin="@dimen/margin_20"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/buttonLayout"
-    android:layout_alignParentBottom="true">
-
-    <Button
-      style="@style/MyButtonthemeBlue"
-      android:layout_width="match_parent"
-      android:id="@+id/negBtn"
-      android:text="I do not accept."
-      android:textAllCaps="false"
-      android:layout_height="40dp"
-      android:layout_marginLeft="20dp"
-      android:layout_marginRight="20dp"/>
-
-    <Button
-      android:id="@+id/posBtn"
-      style="@style/MyButtonthemeRed"
-      android:layout_width="match_parent"
-      android:layout_height="40dp"
-      android:layout_marginLeft="20dp"
-      android:layout_marginRight="20dp"
-      android:layout_marginTop="5dp"
-      android:text="I accept."
-      android:textAllCaps="false"/>
+    android:padding="5dp">
 
 
-    <Button
-      style="@style/MyButtonthemeBlue"
-      android:layout_width="match_parent"
-      android:id="@+id/closeBtn"
-      android:background="@drawable/txt_box_otp"
-      android:text="Close"
-      android:textColor="@color/darkerGray"
-      android:layout_height="40dp"
-      android:layout_marginLeft="20dp"
-      android:layout_marginRight="20dp"
-      android:layout_marginTop="5dp"/>
+    <LinearLayout
+        android:id="@+id/email_details_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp">
 
-  </LinearLayout>
+        <ImageView
+            android:id="@+id/dialogIcon"
+            android:layout_width="@dimen/margin_20"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/margin_10"
+            android:src="@drawable/icn_mobile" />
+
+        <TextView
+            android:id="@+id/dialog_title"
+            style="@style/MyTextViewCOrderBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:text="Call Us Now"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonLayout"
+        android:layout_below="@+id/email_details_layout"
+        android:overScrollMode="never">
+
+        <TextView
+            android:id="@+id/contactMsg"
+            style="@style/MyTextViewtheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:background="@null"
+            android:clickable="false"
+            android:padding="5dp"
+            android:text="Call Us Now"
+            android:textColor="@color/black" />
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_15"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/negBtn"
+            style="@style/MyButtonthemeBlue"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="I do not accept."
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/posBtn"
+            style="@style/MyButtonthemeRed"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:text="I accept."
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/closeBtn"
+            style="@style/MyButtonthemeBlue"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/txt_box_otp"
+            android:text="Close"
+            android:textColor="@color/darkerGray" />
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -43,6 +43,8 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+import static com.takeda.android.Utilities.getCurrentDate;
+
 public class LoginFragment extends BaseFragment implements View.OnClickListener, textWatcherCustom {
   // TODO: Rename parameter arguments, choose names that match
   // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -213,6 +215,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener,
               session.setRememberNotification(SessionManager.IS_REM_ME,
                   ((CheckBox) mView.findViewById(R.id.remember_me_chck_box)).isChecked());
 
+              session.setLoginTime(getCurrentDate());
             } else {
               msgAlertDialog("Error", loginModel.response.statusMessage);
             }

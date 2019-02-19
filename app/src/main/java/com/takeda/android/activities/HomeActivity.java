@@ -1,9 +1,12 @@
 package com.takeda.android.activities;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -13,17 +16,26 @@ import android.webkit.URLUtil;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.listener.multi.CompositeMultiplePermissionsListener;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+import com.karumi.dexter.listener.multi.SnackbarOnAnyDeniedMultiplePermissionsListener;
 import com.skk.lib.BaseClasses.BaseActivity;
 import com.skk.lib.utils.SessionManager;
 import com.takeda.android.R;
 import com.takeda.android.adapters.ViewPagerAdapter;
 import com.takeda.android.async.Params;
 import com.takeda.android.model.BannerModel;
+
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+
 import me.relex.circleindicator.CircleIndicator;
-import org.json.JSONObject;
 
 public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
@@ -242,7 +254,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     final Button posBtn = promptView.findViewById(R.id.posBtn);
     final Button negBtn = promptView.findViewById(R.id.negBtn);
 //        final Switch notify_switch = (Switch) promptView.findViewById(R.id.notification_switch);
-
+    alert1 = alertDialogBuilder.create();
+    alert1.setCancelable(false);
     posBtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -271,9 +284,53 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         });
       }
     });
+    alert1.setOnDismissListener(new DialogInterface.OnDismissListener() {
+      @Override
+      public void onDismiss(DialogInterface dialogInterface) {
+        askPermissionForLocation();
+      }
+    });
 
-    alert1 = alertDialogBuilder.create();
-    alert1.setCancelable(false);
     alert1.show();
+  }
+
+  private void askPermissionForLocation() {
+    Dexter.withActivity(this)
+            .withPermissions(Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR)
+            .withListener(getCompositeListenerForLocation()).check();
+  }
+
+  private MultiplePermissionsListener getCompositeListenerForLocation() {
+
+    MultiplePermissionsListener multiplePermissionsListener = new CompositeMultiplePermissionsListener() {
+
+      @Override
+      public void onPermissionsChecked(MultiplePermissionsReport report) {
+        if (report.areAllPermissionsGranted()) {
+          session.setCalendarSync(true);
+        }
+      }
+
+    };
+
+    MultiplePermissionsListener snackbarPermissionsListener =
+            SnackbarOnAnyDeniedMultiplePermissionsListener.Builder
+                    .with(mView, getString(R.string.calendar_access_needed))
+                    .withOpenSettingsButton("Settings")
+                    .withCallback(new Snackbar.Callback() {
+                      @Override
+                      public void onShown(Snackbar snackbar) {
+                        session.setCalendarSync(false);
+
+                      }
+
+                      @Override
+                      public void onDismissed(Snackbar snackbar, int event) {
+                      }
+                    })
+                    .build();
+
+    return new CompositeMultiplePermissionsListener(snackbarPermissionsListener, multiplePermissionsListener);
+
   }
 }
