@@ -734,7 +734,7 @@ public class BaseActivity extends AppCompatActivity {
             session.setRememberNotification(SessionManager.KEY_NOTIFICATION_STATUS, val);
             updateValue(runnable);
           }
-        }, jsonObject, true, this, null, Params.request_code_update_token);
+        }, jsonObject, false, this, null, Params.request_code_update_token);
       } else {
         session.setFirstTimeFalse();
         session.setRememberNotification(SessionManager.KEY_NOTIFICATION_STATUS, val);
@@ -759,7 +759,7 @@ public class BaseActivity extends AppCompatActivity {
             runnable.run();
           }
         }
-      }, jsonParams, true, this, null, Params.request_code_update_push_preference);
+      }, jsonParams, false, this, null, Params.request_code_update_push_preference);
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -1,3 +1,4 @@
+/*
 package com.skk.lib.SmsListenerModule;
 
 import android.content.BroadcastReceiver;
@@ -9,9 +10,11 @@ import android.telephony.SmsMessage;
 import android.util.Log;
 import com.skk.lib.BaseClasses.BaseActivity;
 
+*/
 /**
  * Created by bharat on 19/10/15.
- */
+ *//*
+
 
 public class SmsListener extends BroadcastReceiver {
 
@@ -65,3 +68,4 @@ public class SmsListener extends BroadcastReceiver {
     return currentSMS;
   }
 }
+*/

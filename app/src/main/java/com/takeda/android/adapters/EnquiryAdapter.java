@@ -2,6 +2,7 @@ package com.takeda.android.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -118,7 +119,18 @@ public class EnquiryAdapter extends BaseAdapter {
             holder.tvProductName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mPrdClick.OnProductNameClick(position);
+                    try {
+                        Layout l = holder.tvProductName.getLayout();
+                        if (l != null) {
+                            int lines = l.getLineCount();
+                            if (lines > 0)
+                                if (l.getEllipsisCount(lines - 1) > 0)
+                                    mPrdClick.OnProductNameClick(position);
+
+                        }
+                    }catch (Exception e){
+                        mPrdClick.OnProductNameClick(position);
+                    }
                 }
             });
 

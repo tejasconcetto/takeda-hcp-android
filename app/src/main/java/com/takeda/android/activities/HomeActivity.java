@@ -25,6 +25,7 @@ import com.karumi.dexter.listener.multi.SnackbarOnAnyDeniedMultiplePermissionsLi
 import com.skk.lib.BaseClasses.BaseActivity;
 import com.skk.lib.utils.SessionManager;
 import com.takeda.android.R;
+import com.takeda.android.Utilities;
 import com.takeda.android.adapters.ViewPagerAdapter;
 import com.takeda.android.async.Params;
 import com.takeda.android.model.BannerModel;
@@ -36,6 +37,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
+
+import static com.takeda.android.Utilities.openDialogWithOption;
 
 public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
@@ -288,7 +291,24 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
       @Override
       public void onDismiss(DialogInterface dialogInterface) {
         askPermissionForLocation();
-      }
+        /*openDialogWithOption(HomeActivity.this,
+                getString(R.string.app_name) + " would like to access your Calendar",
+                getString(R.string.app_name) + " uses your calendar to automatically add events that you are interested in.",
+                "OK", "Don't Allow",
+                new Utilities.OnClickOfButtons() {
+                  @Override
+                  public void onClickPositiveBtn() {
+                    session.setCalendarSync(true);
+                    //askPermissionForLocation();`
+                  }
+
+                  @Override
+                  public void onClickNegativiteBtn() {
+                    session.setCalendarSync(false);
+
+                  }
+                });
+*/      }
     });
 
     alert1.show();
@@ -326,6 +346,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
                       @Override
                       public void onDismissed(Snackbar snackbar, int event) {
+                        session.setCalendarSync(false);
+
                       }
                     })
                     .build();
